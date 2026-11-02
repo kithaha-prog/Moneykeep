@@ -3,7 +3,7 @@
   "short_name": "盖章记账",
   "description": "盖章式的本地记账本，数据只存在你的手机里",
   "lang": "zh-CN",
-  "start_url": "./ledger-1-9.html",
+  "start_url": "./ledger-1-10.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
