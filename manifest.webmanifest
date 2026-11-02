@@ -1,0 +1,17 @@
+{
+  "name": "盖章记账",
+  "short_name": "盖章记账",
+  "description": "盖章式的本地记账本，数据只存在你的手机里",
+  "lang": "zh-CN",
+  "start_url": "./ledger-1-9.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDF0E9",
+  "theme_color": "#EDF0E9",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
