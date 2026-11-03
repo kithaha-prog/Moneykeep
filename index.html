@@ -47,7 +47,7 @@ header{display:flex;justify-content:space-between;align-items:center;min-height:
 
 .hero{margin-top:clamp(6px,1.8dvh,20px)}
 .hero .lab{font-size:13px;color:var(--mute)}
-.big{display:flex;align-items:baseline;gap:6px;margin-top:2px;line-height:1}
+.big{display:flex;align-items:baseline;gap:6px;margin-top:2px;line-height:1;white-space:nowrap}
 .big small{font-family:var(--serif);font-size:22px;font-weight:700}
 .big span{font-family:var(--serif);font-weight:700;font-size:clamp(44px,8.6dvh,66px);letter-spacing:-.5px;font-variant-numeric:tabular-nums}
 
@@ -55,7 +55,7 @@ header{display:flex;justify-content:space-between;align-items:center;min-height:
 .seg button{padding:7px 12px 9px;font-size:13.5px;color:var(--mute);position:relative}
 .seg button[aria-pressed="true"]{color:var(--ink);font-weight:700}
 .seg button[aria-pressed="true"]::after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2.5px;background:var(--seal);border-radius:2px}
-.stats{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:10px;margin-top:10px;align-items:end}
+.stats{display:grid;grid-template-columns:auto auto auto;justify-content:space-between;gap:12px;margin-top:10px;align-items:end}
 .stats .k{font-size:12px;color:var(--mute);margin-bottom:3px}
 .stats .v{font-family:var(--serif);font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
 .stats .avg .v{font-size:clamp(22px,4dvh,30px);color:var(--inc)}
@@ -760,6 +760,23 @@ function toast(t,act){
   el.classList.toggle('act',!!act);el.classList.add('show');
   clearTimeout(toastT);toastT=setTimeout(()=>el.classList.remove('show','act'),act?5500:2400);
 }
+/* 数字太长时整体等比缩小字号（不缩写），保证一行放得下 */
+function fitRow(box,els){
+  if(!box||!box.clientWidth)return;
+  els.forEach(e=>{e.style.fontSize=''});
+  const base=els.map(e=>parseFloat(getComputedStyle(e).fontSize)),W=box.clientWidth;
+  let f=1;
+  for(let i=0;i<8&&box.scrollWidth>W+0.5;i++){
+    f*=Math.max(.5,W/box.scrollWidth*0.985);
+    els.forEach((e,j)=>{e.style.fontSize=Math.max(11,base[j]*f).toFixed(1)+'px'});
+  }
+}
+function fitNums(){
+  fitRow(document.querySelector('.stats'),[...document.querySelectorAll('.stats .v')]);
+  fitRow(document.querySelector('.big'),[document.querySelector('#hNum')]);
+}
+window.addEventListener('resize',fitNums);
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitNums);
 function buzz(ms){try{navigator.vibrate&&navigator.vibrate(ms)}catch(e){}}
 /* IndexedDB：容量大，照片不再受 5MB 限制；不可用时退回 localStorage */
 const DB={ok:false,db:null,
@@ -969,6 +986,7 @@ function render(){
   bEl.textContent=(bl0<0?'-':'')+fmt(Math.abs(bl0),cur);bEl.classList.toggle('neg',bl0<0);
   $('#sSum').textContent=fmt(s,cur);
   $('#sInc').textContent=fmt(si,cur);
+  fitNums();
   $('#sBalK').textContent={month:'本月结余',"7d":'近 7 天结余',all:'累计结余'}[period]||'结余';
   $('#sSub').textContent=`日均支出 ${fmt(s/r.days,cur)}　共 ${inR.length+inRI.length} 笔`;
   $$('#seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===period));
