@@ -280,7 +280,7 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
 @keyframes ripple{0%{opacity:.7;transform:scale(1)}100%{opacity:0;transform:scale(1.5)}}
 @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
-#toast{position:fixed;box-shadow:0 6px 20px rgba(0,0,0,.18);left:50%;bottom:calc(env(safe-area-inset-bottom) + 96px);transform:translate(-50%,10px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:50;max-width:84vw;text-align:center}
+#toast{position:fixed;box-shadow:0 6px 20px rgba(0,0,0,.18);left:50%;bottom:calc(env(safe-area-inset-bottom) + 96px);transform:translate(-50%,10px);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:1000;max-width:84vw;text-align:center}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 
 
@@ -2462,13 +2462,13 @@ const Sync=(()=>{
     try{
       setMsg(signup?'注册中…':'登录中…');
       const j=signup?await authReq('signup',{email,password:pw}):await authReq('token?grant_type=password',{email,password:pw});
-      if(!j.access_token){toast('注册成功，请先去邮箱点确认链接，再回来登录');setMsg('');return}
+      if(!j.access_token){toast('注册成功，请先去邮箱点确认链接，再回来登录');setMsg('注册成功！请先去邮箱点确认链接，然后回来登录。');return}
       setAuth(j);
       const uidChanged=M.uid&&M.uid!==auth.uid;
       if(uidChanged||!M.uid){M.pull='';M.kvAt={};M.kv={};M.kvInit=false;M.dirty={}}
       M.uid=auth.uid;entries.forEach(e=>{M.dirty[String(e.id)]='u'});save();
       gate();setMsg('');renderSet();toast('已登录，开始同步');run(true);
-    }catch(e){setMsg('');toast((signup?'注册':'登录')+'失败：'+e.message)}
+    }catch(e){const m=(signup?'注册':'登录')+'失败：'+(e.message==='Failed to fetch'?'连不上 Supabase，请检查网络或 SB_URL':e.message);setMsg(m);toast(m)}
   }
   async function logout(){
     if(!await ask({title:'退出登录？',msg:'会先同步一次，然后清除本机上的账目（云端数据不受影响）。',ok:'退出'}))return;
