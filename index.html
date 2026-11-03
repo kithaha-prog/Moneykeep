@@ -4,12 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#EDF0E9">
-<meta name="apple-mobile-web-app-title" content="盖章记账">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" type="image/png" href="icon-192.png">
-<link rel="apple-touch-icon" href="data:image/png;base64,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">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
 <title>盖章记账</title>
 <script>
 (function(){try{var t=JSON.parse(localStorage.getItem('ledger.theme')||'null')||'auto';var r=t==='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):t;document.documentElement.dataset.theme=r}catch(e){document.documentElement.dataset.theme='light'}})();
@@ -98,7 +93,7 @@ header{display:flex;justify-content:space-between;align-items:center;min-height:
 .row .mk{font-size:12px;opacity:.75}
 
 .bar-bottom{display:flex;gap:8px;padding-top:10px}
-.ghost{flex:0 0 58px;height:58px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font-weight:600;font-size:14.5px}
+.ghost{position:relative;flex:0 0 52px;height:58px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);font-weight:600;font-size:14.5px}
 .sealbtn{flex:1;height:58px;border-radius:16px;background:var(--seal);color:var(--on-seal);font-size:18px;font-weight:700;letter-spacing:2px;font-family:var(--serif);box-shadow:inset 0 0 0 3px var(--seal),inset 0 0 0 4.5px color-mix(in srgb,var(--on-seal) 55%,transparent);transition:transform .12s}
 .sealbtn:active{transform:scale(.97)}
 
@@ -391,11 +386,80 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
 .acrow .bal{text-align:right;font-family:var(--serif);font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
 .acrow .bal.neg{color:var(--seal)}
 .acrow .bal small{display:block;font-size:11.5px;font-weight:400;color:var(--mute);margin-top:2px}
-#accEd{position:fixed;inset:0;z-index:62;display:grid;place-items:center;padding:24px;background:color-mix(in srgb,var(--ink) 55%,transparent);opacity:0;pointer-events:none;transition:opacity .2s}
-#accEd.show{opacity:1;pointer-events:auto}
-#accEd.show .dlgbox{transform:none}
+#accEd,#xfEd{position:fixed;inset:0;z-index:62;display:grid;place-items:center;padding:24px;background:color-mix(in srgb,var(--ink) 55%,transparent);opacity:0;pointer-events:none;transition:opacity .2s}
+#accEd.show,#xfEd.show{opacity:1;pointer-events:auto}
+#accEd.show .dlgbox,#xfEd.show .dlgbox{transform:none}
+#xfEd .dlgbox{max-height:92dvh;overflow:auto}
+.xf-bal{font-size:12px;color:var(--mute);margin-top:6px}
 .ac-lab{font-size:12.5px;color:var(--mute);margin:14px 0 6px}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* 地点选择器 */
+#mapEd{position:fixed;inset:0;z-index:64;display:flex;flex-direction:column;max-width:480px;margin:0 auto;background:var(--paper);transform:translateY(105%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s .3s}
+#mapEd.show{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s 0s}
+#mapEd .mp-head{display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top,0px) + 10px) 14px 8px}
+#mapEd .mp-head h2{margin:0;font-family:var(--serif);font-size:17px}
+#mapEd .mp-head button{font-size:15px;font-weight:600;padding:6px 4px;min-width:48px}
+#mapEd .mp-bar{display:flex;gap:8px;padding:0 14px 8px}
+#mapEd .mp-bar .fld{flex:1;min-width:0;height:40px}
+#mapEd .mp-bar button{flex:none;height:40px;padding:0 14px;border-radius:12px;border:1.5px solid var(--ink);font-weight:600;font-size:14px}
+#mpRes{margin:0 14px 8px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);max-height:34dvh;overflow:auto}
+#mpRes[hidden]{display:none}
+#mpRes button{white-space:pre-line;display:block;width:100%;text-align:left;padding:10px 12px;font-size:13.5px;line-height:1.45;border-bottom:1px solid var(--line)}
+#mpRes button:last-child{border-bottom:0}
+#mpRes .none{padding:12px;font-size:13px;color:var(--mute)}
+#mpMapWrap{position:relative;flex:1;min-height:200px;background:var(--card)}
+#mpMap{position:absolute;inset:0}
+#mpPin{position:absolute;left:50%;top:50%;width:34px;height:42px;margin:-42px 0 0 -17px;z-index:500;pointer-events:none;font-size:34px;line-height:42px;text-align:center;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35))}
+#mpPin::after{content:"";position:absolute;left:50%;bottom:-2px;width:8px;height:3px;margin-left:-4px;border-radius:50%;background:rgba(0,0,0,.35)}
+#mpLay{position:absolute;right:10px;top:10px;z-index:600;width:130px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+#mpGps{position:absolute;right:10px;bottom:14px;z-index:600;width:44px;height:44px;border-radius:50%;background:var(--card);border:1.5px solid var(--line);font-size:20px;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+#mpInfo{padding:10px 14px calc(env(safe-area-inset-bottom,0px) + 12px);border-top:1.5px solid var(--line);background:var(--paper)}
+#mpInfo b{display:block;font-size:14.5px;line-height:1.45;word-break:break-all}
+#mpInfo small{display:block;margin-top:2px;color:var(--mute);font-size:12px;font-variant-numeric:tabular-nums}
+#mpInfo .btn{margin-top:10px;width:100%;flex:none;height:44px}
+#mpInfo .mp-nm{display:block;width:100%;height:40px;margin-top:8px}
+#mpInfo .mp-lb{display:block;margin-top:8px;font-size:12px;color:var(--mute)}
+/* 分账 */
+.ghost .bdg{position:absolute;top:5px;right:4px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--seal);color:var(--on-seal);font-size:11px;line-height:17px;font-weight:700;font-style:normal;font-family:sans-serif}
+.acts.five .chip{gap:3px;font-size:12px}
+.acts.five .chip .ci{width:20px;height:20px;font-size:13px}
+.chip span:not(.ci):not(.x){min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#splitEd{position:fixed;inset:0;z-index:63;display:grid;place-items:center;padding:24px;background:color-mix(in srgb,var(--ink) 55%,transparent);opacity:0;pointer-events:none;transition:opacity .2s}
+#splitEd.show{opacity:1;pointer-events:auto}
+#splitEd.show .dlgbox{transform:none}
+.sp-recent{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.sp-recent button{padding:5px 11px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);font-size:13px}
+.sp-quick{display:flex;gap:8px;margin-top:8px}
+.sp-quick button{flex:1;height:34px;border-radius:10px;border:1.5px dashed var(--mute);font-size:13px}
+.sp-hint{font-size:12.5px;color:var(--mute);margin:12px 0 6px}
+.sp-sum{margin:6px 0 2px;padding:14px 16px;border-radius:16px;background:var(--card);border:1.5px solid var(--line)}
+.sp-sum .k{font-size:12.5px;color:var(--mute)}
+.sp-sum .v{font-family:var(--serif);font-weight:700;font-size:23px;font-variant-numeric:tabular-nums;margin:2px 0 4px;line-height:1.3}
+.sp-who{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:18px 0 6px}
+.sp-who b{font-family:var(--serif);font-size:16px}
+.sp-who span{display:block;font-size:12.5px;color:var(--mute);margin-top:2px}
+.sp-who button{height:30px;padding:0 12px;border-radius:9px;border:1.5px solid var(--seal);color:var(--seal);font-size:12.5px;flex:none}
+.srow{display:flex;align-items:center;gap:8px}
+.srow .row{flex:1;min-width:0}
+.srow .got{flex:none;height:34px;padding:0 13px;border-radius:10px;border:1.5px solid var(--ink);font-size:13px;font-weight:600}
+.srow.done .row{opacity:.55}
+.srow.done .got{border-color:var(--line);color:var(--mute);font-weight:400}
+.sp-tog{width:100%;text-align:center;color:var(--mute);font-size:13.5px;padding:20px 0 6px}
+.sp-card{margin:16px 0 0;padding:14px 16px;border-radius:14px;border:1.5px dashed var(--mute);background:var(--card)}
+.sp-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;color:var(--mute)}
+.sp-top b{color:var(--ink);font-family:var(--serif);font-size:16px}
+.sp-amt{font-family:var(--serif);font-weight:700;font-size:22px;margin:6px 0 12px;font-variant-numeric:tabular-nums}
+.sp-card .btn{width:100%;flex:none}
+
+#gate{position:fixed;inset:0;z-index:999;background:var(--paper);color:var(--ink);display:none;align-items:center;justify-content:center;padding:24px;padding-top:calc(24px + env(safe-area-inset-top));padding-bottom:calc(24px + env(safe-area-inset-bottom))}
+#gate.show{display:flex}
+#gate .gbox{width:100%;max-width:340px;text-align:center}
+#gate h1{font-family:var(--serif);font-size:30px;letter-spacing:4px;margin:0 0 6px}
+#gate p{color:var(--mute);font-size:13.5px;line-height:1.6;margin:0 0 22px}
+#gate .fld{display:block;width:100%;margin-bottom:10px}
+#gate .row{display:flex;gap:10px;margin-top:6px}
+#gate .gmsg{min-height:20px;margin:12px 0 0;font-size:12.5px;color:var(--seal)}
 </style>
 </head>
 <body>
@@ -436,6 +500,7 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
     <button class="ghost" id="openLedger">账本</button>
     <button class="ghost" id="openStats">统计</button>
     <button class="ghost" id="openAcc">账户</button>
+    <button class="ghost" id="openSplit">分账<i class="bdg" id="spBdg" hidden></i></button>
     <button class="sealbtn" id="openAdd">记一笔</button>
   </div>
 </div>
@@ -458,6 +523,7 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
       <button class="chip" id="bPhoto"><span class="ci" id="ciPhoto">📷</span><span id="tPhoto">拍照</span><span class="x" id="xPhoto" hidden>×</span></button>
       <button class="chip" id="bLoc"><span class="ci">📍</span><span id="tLoc">地点</span><span class="x" id="xLoc" hidden>×</span></button>
       <button class="chip" id="bRep"><span class="ci">🔁</span><span id="tRep">重复</span><span class="x" id="xRep" hidden>×</span></button>
+      <button class="chip" id="bSplit"><span class="ci">🤝</span><span id="tSplit">分账</span><span class="x" id="xSplit" hidden>×</span></button>
       <label class="chip" id="bDate"><span class="ci">🕒</span><span id="tDate">今天</span><input type="datetime-local" id="dtIn" aria-label="选择日期和时间"></label>
     </div>
     <div class="pad" id="pad">
@@ -476,7 +542,7 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
   <div class="sh-head"><button class="t" data-close="Ledger">返回</button><h2 id="lTitle">账本</h2><button class="t r" id="lView">日历</button></div>
   <div class="lf" id="lfWrap">
     <input class="fld" id="q" type="search" placeholder="搜索备注、分类或金额" enterkeyhint="search">
-    <div class="sg" id="lType"><button data-t="all">全部</button><button data-t="exp">支出</button><button data-t="inc">收入</button></div>
+    <div class="sg" id="lType"><button data-t="all">全部</button><button data-t="exp">支出</button><button data-t="inc">收入</button><button data-t="xfer">转账</button></div>
     <div class="lrow"><button class="pick" id="fMonth" aria-label="月份"></button><button class="pick" id="fCat" aria-label="分类"></button><button class="pick" id="fCur" aria-label="币种"></button><button class="pick" id="fAcc" aria-label="账户"></button></div>
     <div class="lsum" id="lSum"></div>
   </div>
@@ -494,6 +560,12 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
 <div class="sheet page" id="sheetAcc" role="dialog" aria-label="账户">
   <div class="sh-head"><button class="t" data-close="Acc">返回</button><h2>账户</h2><button class="t r" id="acCur" style="font-weight:700;color:var(--ink)">RM ▾</button></div>
   <div class="scroll" id="accBody"></div>
+</div>
+
+<!-- 分账 -->
+<div class="sheet page" id="sheetSplit" role="dialog" aria-label="分账">
+  <div class="sh-head"><button class="t" data-close="Split">返回</button><h2>分账</h2><span class="t"></span></div>
+  <div class="scroll" id="splitBody"></div>
 </div>
 
 <!-- 分类管理 -->
@@ -526,6 +598,13 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
   <div class="curgrid" id="curGrid"></div>
 </div>
 
+<div id="gate" role="dialog" aria-label="登录"><div class="gbox">
+  <h1>盖章记账</h1><p>登录后账目会保存到你的账号，换设备也能用。</p>
+  <input class="fld" id="gEm" type="email" autocomplete="username" placeholder="邮箱">
+  <input class="fld" id="gPw" type="password" autocomplete="current-password" placeholder="密码（至少 6 位）">
+  <div class="row"><button class="btn fill" id="gIn">登录</button><button class="btn" id="gUp">注册</button></div>
+  <div class="gmsg" id="gMsg"></div>
+</div></div>
 <div class="bd" id="bd"></div>
 <div class="bd" id="bd2"></div>
 
@@ -542,6 +621,18 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
   <div class="emojis" id="ceList"></div>
   <div class="dl-acts"><button class="btn danger" id="ceDel">删除</button><button class="btn" id="ceNo">取消</button><button class="btn fill" id="ceOk">保存</button></div>
 </div></div>
+<div id="xfEd" role="dialog" aria-modal="true" aria-label="转账"><div class="dlgbox ed">
+  <h3 id="xfT">转账</h3>
+  <div class="ac-lab" style="margin-top:0">从</div><div class="accrow" id="xfFrom"></div><div class="xf-bal" id="xfBal"></div>
+  <div class="ac-lab">转入</div><div class="accrow" id="xfTo"></div>
+  <div class="ac-lab" id="xfAmtLab">金额</div>
+  <input class="fld" id="xfAmt" type="number" inputmode="decimal" min="0" placeholder="例如 100" aria-label="转账金额" enterkeyhint="next">
+  <div class="ac-lab">备注（可不填）</div>
+  <input class="fld" id="xfNote" type="text" maxlength="40" placeholder="例如：提现、还信用卡" aria-label="备注" enterkeyhint="done">
+  <div class="ac-lab">时间</div>
+  <input class="fld" id="xfDt" type="datetime-local" aria-label="转账时间">
+  <div class="dl-acts"><button class="btn" id="xfNo">取消</button><button class="btn fill" id="xfOk">转账</button></div>
+</div></div>
 <div id="accEd" role="dialog" aria-modal="true" aria-label="编辑账户"><div class="dlgbox ed">
   <h3 id="aeT">添加账户</h3>
   <div class="ce-row" style="margin-top:0"><input class="fld ce-emo" id="aeEmo" maxlength="8" aria-label="图标"><input class="fld" id="aeName" maxlength="8" placeholder="账户名称（最多 8 字）" aria-label="账户名称" enterkeyhint="done"></div>
@@ -549,6 +640,26 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
   <div class="ac-lab" id="aeInitLab">初始余额</div>
   <input class="fld" id="aeInit" type="number" inputmode="decimal" placeholder="可不填，例如 500" aria-label="初始余额">
   <div class="dl-acts"><button class="btn danger" id="aeDel">删除</button><button class="btn" id="aeNo">取消</button><button class="btn fill" id="aeOk">保存</button></div>
+</div></div>
+<!-- 地点选择器 -->
+<div id="mapEd" role="dialog" aria-modal="true" aria-label="选择地点">
+  <div class="mp-head"><button id="mpNo">取消</button><h2>选择地点</h2><button id="mpClear" style="color:var(--seal)">清除</button></div>
+  <div class="mp-bar"><input class="fld" id="mpQ" type="search" placeholder="搜索地名或地址" aria-label="搜索地点" enterkeyhint="search"><button id="mpGo">搜索</button></div>
+  <div style="padding:0 14px 8px;font-size:12.5px;color:var(--mute)">找不到？<a id="mpGoogle" href="#" target="_blank" rel="noopener" style="color:var(--ink);font-weight:600;text-decoration:underline">用 Google 地图找 ↗</a>，长按图钉复制坐标或网址，粘贴到上面搜索框即可</div>
+  <div id="mpRes" hidden></div>
+  <div id="mpMapWrap"><div id="mpMap"></div><div id="mpPin">📍</div>
+    <div class="sg" id="mpLay"><button data-ml="map" aria-pressed="true">普通</button><button data-ml="sat" aria-pressed="false">卫星</button></div>
+    <button id="mpGps" aria-label="定位到我的位置">🎯</button></div>
+  <div id="mpInfo"><b id="mpName">拖动地图，让图钉对准地点</b><small id="mpCoord"></small><span class="mp-lb">地点名称（地图不准时可以自己改）</span><input class="fld mp-nm" id="mpNameIn" maxlength="40" placeholder="例如：Uniqlo NU Sentral" aria-label="地点名称" enterkeyhint="done" autocomplete="off"><button class="btn fill" id="mpOk">用这个地点</button></div>
+</div>
+<div id="splitEd" role="dialog" aria-modal="true" aria-label="分账"><div class="dlgbox ed">
+  <h3>这笔里有多少是别人的？</h3>
+  <div class="ce-row"><input class="fld" id="spWho" maxlength="12" placeholder="是谁的（例如：小明）" aria-label="对方姓名" enterkeyhint="next"></div>
+  <div class="sp-recent" id="spRecent"></div>
+  <div class="ac-lab" id="spHint"></div>
+  <input class="fld" id="spAmt" type="number" inputmode="decimal" min="0" placeholder="对方应付的金额" aria-label="分账金额" enterkeyhint="done">
+  <div class="sp-quick"><button type="button" id="spHalf">一半</button><button type="button" id="spAll">全部</button></div>
+  <div class="dl-acts"><button class="btn danger" id="spDel">移除</button><button class="btn" id="spNo">取消</button><button class="btn fill" id="spOk">保存</button></div>
 </div></div>
 <div class="sheet" id="sheetPick" role="dialog" aria-label="请选择">
   <div class="sh-head"><span class="t"></span><h2 id="pickTitle">请选择</h2><button class="t r" id="pickClose">关闭</button></div>
@@ -584,7 +695,8 @@ const WD='日一二三四五六';
 const isInc=e=>e.type==='inc';
 const listOf=t=>t==='inc'?INCS:CATS;
 const pinned=id=>id==='other'||id==='other_i';
-const catOf=e=>{const l=listOf(e.type);return l.find(c=>c[0]===e.cat)||l.find(c=>pinned(c[0]))||l[l.length-1]};
+const XFER_CAT=['xfer','🔄','转账'];
+const catOf=e=>{if(e.type==='xfer')return XFER_CAT;const l=listOf(e.type);return l.find(c=>c[0]===e.cat)||l.find(c=>pinned(c[0]))||l[l.length-1]};
 const cleanTxt=t=>String(t==null?'':t).replace(/[<>&"'`]/g,'').trim();
 const curOf=c=>CURS.find(x=>x.c===c)||CURS[0];
 const curTag=c=>{const u=curOf(c);return (u.s==='¥'||u.s==='$')?u.c:u.s};
@@ -701,7 +813,7 @@ function deleteEntry(id){
   toast('已删除',{label:'撤销',fn:()=>{entries.push(e);persist(e);refreshAll();toast('已恢复')}});
 }
 const isOpen=n=>$('#sheet'+n).classList.contains('open');
-function refreshAll(){render();if(isOpen('Ledger')){lView==='cal'?renderCal():renderLedger()}if(isOpen('Stats'))renderStats();if(isOpen('Set'))renderSet();if(isOpen('Recur'))renderRecur();if(isOpen('Acc'))renderAcc()}
+function refreshAll(){render();if(isOpen('Ledger')){lView==='cal'?renderCal():renderLedger()}if(isOpen('Stats'))renderStats();if(isOpen('Set'))renderSet();if(isOpen('Recur'))renderRecur();if(isOpen('Acc'))renderAcc();if(isOpen('Split'))renderSplit()}
 
 /* ---------- 主题 ---------- */
 const THEMES=[
@@ -821,12 +933,13 @@ function streak(){
   while(set.has(dk(d))){n++;d.setDate(d.getDate()-1)}
   return n;
 }
+const xfRoute=e=>{const a=accById(e.acc),b=accById(e.to);return (a?a.name:'未指定')+' → '+(b?b.name:'未指定')};
 function rowHTML(e,withDate,swipe){
   const c=catOf(e),t=new Date(e.ts);
   const when=(withDate?`${t.getMonth()+1}月${t.getDate()}日 `:'')+`${pad2(t.getHours())}:${pad2(t.getMinutes())}`;
-  const marks=(e.rid?'🔁':'')+(e.photo?'📷':'')+(e.loc?'📍':'');
+  const marks=(e.rid?'🔁':'')+(e.photo?'📷':'')+(e.loc?'📍':'')+(e.split?(e.split.done?'✅':'🤝'):'');
   const inner=`<button class="row" data-id="${e.id}"><span class="ico">${c[1]}</span>
-    <span class="mid"><b>${esc(e.note||c[2])}</b><em>${when}　${c[2]}${accOf(e)?' · '+esc(accOf(e).name):''}</em></span>
+    <span class="mid"><b>${esc(e.note||c[2])}</b><em>${when}　${c[2]}${e.type==='xfer'?' · '+esc(xfRoute(e)):accOf(e)?' · '+esc(accOf(e).name):''}</em></span>
     <span class="mk">${marks}</span><span class="amt${isInc(e)?' inc':''}">${isInc(e)?'+':''}${fmt(e.amt,e.cur)}</span></button>`;
   return swipe?`<div class="sw" data-id="${e.id}"><div class="sw-act"><button data-act="edit">编辑</button><button data-act="del">删除</button></div>${inner}</div>`:inner;
 }
@@ -841,7 +954,7 @@ function render(){
 
   const cu=curOf(cur);
   $('#curLabel').textContent=curTag(cur);
-  const mineAll=entries.filter(e=>e.cur===cur),mine=mineAll.filter(e=>!isInc(e));
+  const mineAll=entries.filter(e=>e.cur===cur&&e.type!=='xfer'),mine=mineAll.filter(e=>!isInc(e));
   const today=sum(mine.filter(e=>dk(e.ts)===dk(now)));
   const todayInc=sum(mineAll.filter(e=>isInc(e)&&dk(e.ts)===dk(now)));
   $('#hSym').textContent=cu.s;
@@ -887,6 +1000,7 @@ function render(){
 
   const recent=[...entries].sort((a,b)=>b.ts-a.ts).slice(0,3);
   $('#recent').innerHTML=recent.length?recent.map(e=>rowHTML(e,false,true)).join(''):(loaded?'<div class="empty">还没有账目。<br>点下面的「记一笔」，盖下第一枚章。</div>':'');
+  updateSpBadge();
 }
 $$('#seg button').forEach(b=>b.onclick=()=>{period=b.dataset.p;store.set('ledger.period',period);render()});
 $('#openLedger').onclick=()=>{lLimit=150;cal.off=0;cal.sel=null;buildFilters();applyView();openSheet('Ledger');if(entries.length&&!store.get('ledger.hintSwipe')){store.set('ledger.hintSwipe',1);setTimeout(()=>toast('小提示：账目向左滑，可以快速编辑或删除'),500)}};
@@ -913,7 +1027,7 @@ $('#acCur').onclick=()=>pickCur('global');
 $('#addCur').onclick=()=>pickCur('draft');
 
 /* ---------- 记一笔 / 修改 ---------- */
-function newDraft(){return{id:null,type:'exp',amt:'',cat:suggestCat('exp'),acc:defAcc(),photo:null,loc:null,ts:null,cur}}
+function newDraft(){return{id:null,type:'exp',amt:'',cat:suggestCat('exp'),acc:defAcc(),photo:null,loc:null,split:null,ts:null,cur}}
 /* 金额算式：12+8.5−3 */
 function evalAmt(expr,c){
   const f=Math.pow(10,curOf(c||draft.cur).d),t=String(expr||'').replace(/[+−]+$/,'');
@@ -942,22 +1056,50 @@ function suggestCat(type){
   const best=Object.keys(sc).sort((a,b)=>sc[b]-sc[a])[0];
   return best||list[0][0];
 }
-/* 备注快捷词：这个分类下最常用的几条，并带上它最常用的金额 */
+/* 备注快捷词：
+   ① 没输入时：这个分类下最常用的历史备注 + 内置常用词（补足到 8 个，新用户/新分类也有得选）
+   ② 输入时：在所有分类的历史备注 + 内置常用词里模糊搜索，点中别的分类的词会自动切到那个分类 */
+const QN_PRESET={
+  exp:{food:['早餐','午餐','晚餐','宵夜','咖啡','奶茶','外卖','零食','水果','聚餐'],
+    move:['地铁','公交','打车','加油','停车费','过路费','充电','机票','火车票'],
+    shop:['日用品','超市','衣服','鞋子','网购','化妆品','礼物','数码'],
+    fun:['电影','游戏','会员','演出','旅游','KTV','门票'],
+    home:['房租','水电费','电费','水费','网费','话费','物业费','维修'],
+    health:['挂号','药品','看病','体检','牙科'],
+    study:['书','课程','学费','文具','培训','考试'],
+    other:['红包','请客','罚款','手续费','捐款']},
+  inc:{salary:['工资','补贴'],bonus:['奖金','年终奖'],invest:['利息','分红','理财收益'],redpk:['红包'],side:['兼职','外快'],refund:['退款','报销'],gift:['礼金'],other_i:['转账','二手出售']}
+};
 function renderQN(){
-  const m=new Map(),isI=draft.type==='inc';
+  const isI=draft.type==='inc',typed=$('#note').value.trim(),q=typed.toLowerCase(),MAX=8;
+  const m=new Map();   // note -> {n,t,cat,catN:Map,a:Map}
   entries.forEach(e=>{
-    if(isInc(e)!==isI||e.cat!==draft.cat||!e.note)return;
-    const o=m.get(e.note)||{n:0,t:0,a:new Map()};o.n++;o.t=Math.max(o.t,e.ts);
+    if(isInc(e)!==isI||e.type==='xfer'||!e.note||e.fromSplit)return;
+    if(!q&&e.cat!==draft.cat)return;
+    if(q&&!e.note.toLowerCase().includes(q))return;
+    const o=m.get(e.note)||{n:0,t:0,cn:new Map(),a:new Map()};
+    o.n++;o.t=Math.max(o.t,e.ts);o.cn.set(e.cat,(o.cn.get(e.cat)||0)+1);
     if(e.cur===draft.cur)o.a.set(e.amt,(o.a.get(e.amt)||0)+1);
     m.set(e.note,o);
   });
-  const typed=$('#note').value.trim();
-  const list=[...m.entries()].filter(([k])=>k!==typed).sort((a,b)=>b[1].n-a[1].n||b[1].t-a[1].t).slice(0,5)
-    .map(([k,o])=>[k,[...o.a.entries()].sort((a,b)=>b[1]-a[1]||b[0]-a[0])[0]]);
+  const list=[...m.entries()].filter(([k])=>k.toLowerCase()!==q)
+    .sort((x,y)=>{   // 输入时：以输入开头的排前面；其余按次数、最近
+      if(q){const px=x[0].toLowerCase().startsWith(q),py=y[0].toLowerCase().startsWith(q);if(px!==py)return px?-1:1}
+      return y[1].n-x[1].n||y[1].t-x[1].t})
+    .slice(0,MAX).map(([k,o])=>({k,
+      c:[...o.cn.entries()].sort((x,y)=>y[1]-x[1])[0][0],
+      a:[...o.a.entries()].sort((x,y)=>y[1]-x[1]||y[0]-x[0])[0]}));
+  /* 内置常用词补位 */
+  const have=new Set(list.map(x=>x.k.toLowerCase())),pre=QN_PRESET[isI?'inc':'exp'],valid=new Set(listOf(draft.type).map(c=>c[0]));
+  const addPre=(cat,w)=>{const lw=w.toLowerCase();if(list.length>=MAX||have.has(lw)||lw===q)return;have.add(lw);list.push({k:w,c:cat})};
+  if(!q)(pre[draft.cat]||[]).forEach(w=>addPre(draft.cat,w));
+  else Object.keys(pre).filter(c=>valid.has(c)).forEach(c=>pre[c].forEach(w=>{if(w.toLowerCase().includes(q))addPre(c,w)}));
   const el=$('#qn');el.hidden=!list.length;
-  el.innerHTML=list.map(([k,a])=>`<button type="button" data-n="${esc(k)}"${a?` data-a="${a[0]}"`:''}>${esc(k)}${a?`<small>${fmtNum(a[0],draft.cur)}</small>`:''}</button>`).join('');
+  el.innerHTML=list.map(x=>`<button type="button" data-n="${esc(x.k)}" data-c="${x.c}"${x.a?` data-a="${x.a[0]}"`:''}>${esc(x.k)}${x.a?`<small>${fmtNum(x.a[0],draft.cur)}</small>`:''}</button>`).join('');
   $$('#qn button').forEach(b=>b.onclick=()=>{
     $('#note').value=b.dataset.n;
+    const c=b.dataset.c;
+    if(c&&c!==draft.cat&&valid.has(c)&&!draft.id){draft.cat=c;draft.catManual=true}   // 搜到别的分类的词，顺手切过去
     if(!draft.amt&&b.dataset.a&&!draft.id)draft.amt=b.dataset.a;   // 金额还没填时，顺手带出常用金额
     renderQN();renderAdd();buzz(8);
   });
@@ -968,7 +1110,7 @@ function renderQA(){
   if(draft.amt||draft.id){el.hidden=true;return}
   const cnt=new Map(),isI=draft.type==='inc';
   entries.forEach(e=>{
-    if(isInc(e)!==isI||e.cat!==draft.cat||e.cur!==draft.cur)return;
+    if(isInc(e)!==isI||e.type==='xfer'||e.cat!==draft.cat||e.cur!==draft.cur)return;
     const o=cnt.get(e.amt)||{n:0,t:0};o.n++;o.t=Math.max(o.t,e.ts);cnt.set(e.amt,o);
   });
   const list=[...cnt.entries()].sort((a,b)=>b[1].n-a[1].n||b[1].t-a[1].t).slice(0,4).map(x=>x[0]);
@@ -982,7 +1124,7 @@ function autoCat(){
   const q=$('#note').value.trim().toLowerCase();if(!q)return;
   const isI=draft.type==='inc',sc={};
   entries.forEach(e=>{
-    if(isInc(e)!==isI||!e.note)return;
+    if(isInc(e)!==isI||e.type==='xfer'||!e.note)return;
     const n=e.note.toLowerCase();
     if(n===q)sc[e.cat]=(sc[e.cat]||0)+3;else if(q.length>=2&&n.startsWith(q))sc[e.cat]=(sc[e.cat]||0)+1;
   });
@@ -1020,7 +1162,7 @@ function renderAdd(){
   $('#tPhoto').textContent=draft.photo?'已拍照':'拍照';
   $('#xPhoto').hidden=!draft.photo;
   $('#bLoc').classList.toggle('on',!!draft.loc);
-  $('#tLoc').textContent=draft.loc?'已定位':'地点';
+  $('#tLoc').textContent=draft.loc?(draft.loc.name?draft.loc.name.slice(0,8):'已定位'):'地点';
   $('#xLoc').hidden=!draft.loc;
   // 日期
   let lab='今天';
@@ -1030,7 +1172,11 @@ function renderAdd(){
   $('#dtIn').max=toLocalInput(Date.now());
   $('#dtIn').value=toLocalInput(draft.ts||Date.now());
   // 重复
-  $('#bRep').hidden=!!draft.id;$('#acts').classList.toggle('four',!draft.id);
+  $('#bRep').hidden=!!draft.id;$('#acts').classList.toggle('five',!draft.id&&draft.type!=='inc');
+  $('#bSplit').hidden=draft.type==='inc';
+  $('#bSplit').classList.toggle('on',!!draft.split);
+  $('#tSplit').textContent=draft.split?draft.split.who:'分账';
+  $('#xSplit').hidden=!draft.split;
   $('#bRep').classList.toggle('on',!!draft.rep);
   $('#tRep').textContent=draft.rep?FREQ_L[draft.rep]:'重复';
   $('#xRep').hidden=!draft.rep;
@@ -1049,7 +1195,8 @@ function openAdd(){
 }
 function openEdit(id){
   const e=entries.find(x=>x.id===id);if(!e)return;
-  draft={id:e.id,type:e.type||'exp',amt:String(e.amt),cat:e.cat,acc:e.acc||null,photo:e.photo||null,loc:e.loc||null,ts:e.ts,cur:e.cur};
+  if(e.type==='xfer'){openXfer(e);return}
+  draft={id:e.id,type:e.type||'exp',amt:String(e.amt),cat:e.cat,acc:e.acc||null,photo:e.photo||null,loc:e.loc||null,split:e.split?{...e.split}:null,ts:e.ts,cur:e.cur};
   $('#note').value=e.note||'';
   renderCats();renderAdd();showCat();openSheet('Add');
 }
@@ -1057,6 +1204,7 @@ $('#openAdd').onclick=openAdd;
 
 $$('#addType button').forEach(b=>b.onclick=()=>{
   draft.type=b.dataset.t;
+  if(draft.type==='inc')draft.split=null;
   if(!listOf(draft.type).some(c=>c[0]===draft.cat))draft.cat=suggestCat(draft.type);
   renderCats();renderAdd();buzz(8);
 });
@@ -1105,9 +1253,131 @@ function shrink(file){
     img.onerror=rej;img.src=url;
   });
 }
-/* 地点 */
-$('#bLoc').onclick=e=>{
-  if(e.target.id==='xLoc'){draft.loc=null;renderAdd();return}
+/* 地点：点开地图弹窗，可搜索、拖动、定位、切换普通/卫星（联网时使用） */
+const mapType=()=>store.get('ledger.mapType')==='sat'?'sat':'map';
+let LLp=null;
+function loadLeaflet(){
+  if(window.L)return Promise.resolve();
+  return LLp||(LLp=new Promise((res,rej)=>{
+    const c=document.createElement('link');c.rel='stylesheet';c.href='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';document.head.appendChild(c);
+    const sc=document.createElement('script');sc.src='https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+    sc.onload=()=>res();sc.onerror=()=>{LLp=null;rej(new Error('load'))};document.head.appendChild(sc);
+  }));
+}
+const MP={map:null,tiles:null,sel:null,name:'',rt:0,seq:0};
+const TILES={
+  map:['https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png','© OpenStreetMap © CARTO'],
+  sat:['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}','Imagery © Esri']
+};
+function mpSetLayer(t){
+  if(!MP.map)return;
+  if(MP.tiles)MP.map.removeLayer(MP.tiles);
+  MP.tiles=L.tileLayer(TILES[t][0],{maxZoom:19,subdomains:'abcd',attribution:TILES[t][1]}).addTo(MP.map);
+  $$('#mpLay button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.ml===t));
+}
+function mpUpdate(){
+  const c=MP.map.getCenter();MP.sel={lat:+c.lat.toFixed(6),lng:+c.lng.toFixed(6)};
+  $('#mpCoord').textContent=MP.sel.lat+', '+MP.sel.lng;
+  $('#mpName').textContent='正在查询地址…';MP.name='';
+  clearTimeout(MP.rt);const my=++MP.seq;
+  MP.rt=setTimeout(async()=>{
+    try{
+      const r=await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&zoom=18&accept-language=zh&lat=${MP.sel.lat}&lon=${MP.sel.lng}`);
+      const j=await r.json();if(my!==MP.seq)return;
+      MP.name=cleanTxt((j&&j.name)||'')||'';
+      const full=j&&j.display_name?String(j.display_name):'';
+      MP.full=full;
+      $('#mpName').textContent=full||'（查不到地址，坐标仍可保存）';
+      if(!MP.name&&full)MP.name=cleanTxt(full.split(/[,，]/)[0]);
+      if(!MP.custom)$('#mpNameIn').value=MP.name;
+    }catch(e){if(my===MP.seq)$('#mpName').textContent='（离线或查询失败，坐标仍可保存）'}
+  },600);
+}
+function mpGoto(lat,lng,z){MP.map.setView([lat,lng],z||17)}
+/* 从粘贴内容里认出坐标：「3.139, 101.687」或 Google 地图网址（@纬度,经度 / !3d..!4d.. / q=纬度,经度） */
+function parseLatLng(t){
+  let m=t.match(/@(-?\d{1,3}\.\d+),\s*(-?\d{1,3}\.\d+)/)||t.match(/!3d(-?\d{1,3}\.\d+)!4d(-?\d{1,3}\.\d+)/)||t.match(/[?&](?:q|ll|query|destination)=(-?\d{1,3}\.\d+)(?:,|%2C)\s*(-?\d{1,3}\.\d+)/i)||t.match(/^\s*(-?\d{1,3}\.\d+)\s*[,，\s]\s*(-?\d{1,3}\.\d+)\s*$/);
+  if(!m)return null;const la=+m[1],ln=+m[2];
+  return Math.abs(la)<=90&&Math.abs(ln)<=180?[la,ln]:null;
+}
+async function mpSearch(){
+  const q=$('#mpQ').value.trim(),box=$('#mpRes');if(!q)return;
+  const ll=parseLatLng(q);
+  if(ll){box.hidden=true;$('#mpQ').blur();mpGoto(ll[0],ll[1],18);buzz(8);return}
+  if(/goo\.gl|g\.co\/kgs/i.test(q)){box.hidden=false;box.innerHTML='<div class="none">短链接无法直接解析。请在 Google 地图里长按图钉复制坐标，或打开后复制地址栏里的完整网址，再粘贴到这里。</div>';return}
+  box.hidden=false;box.innerHTML='<div class="none">搜索中…</div>';
+  const show=list=>{
+    box.innerHTML=list.map((x,i)=>`<button data-i="${i}">${esc(x.t)}</button>`).join('');
+    $$('#mpRes button').forEach(b=>b.onclick=()=>{
+      const x=list[+b.dataset.i];box.hidden=true;$('#mpQ').blur();mpGoto(x.lat,x.lng,x.z||17);buzz(8);
+    });
+  };
+  try{
+    const c=MP.map.getCenter();
+    let list=[];
+    const gk=(store.get('ledger.gkey')||'').trim();
+    if(gk){   // 填了 Google Key：优先用 Google Places，直接搜店名/商场
+      try{
+        const r=await fetch('https://places.googleapis.com/v1/places:searchText',{method:'POST',
+          headers:{'Content-Type':'application/json','X-Goog-Api-Key':gk,'X-Goog-FieldMask':'places.displayName,places.formattedAddress,places.location'},
+          body:JSON.stringify({textQuery:q,languageCode:'zh-CN',regionCode:'MY',pageSize:8,locationBias:{circle:{center:{latitude:c.lat,longitude:c.lng},radius:50000}}})});
+        const j=await r.json();
+        if(!r.ok)throw new Error((j.error&&j.error.message)||r.status);
+        list=(j.places||[]).map(x=>({t:((x.displayName&&x.displayName.text)||'')+(x.formattedAddress?'\n'+x.formattedAddress:''),lat:x.location.latitude,lng:x.location.longitude,z:17}));
+      }catch(e){toast('Google 搜索失败，已改用免费搜索：'+String(e.message||e).slice(0,60))}
+    }
+    const nom=async extra=>{
+      try{
+        const r=await fetch(`https://nominatim.openstreetmap.org/search?format=jsonv2&limit=8&accept-language=zh&q=${encodeURIComponent(q)}${extra}`);
+        return (await r.json()).map(x=>({t:x.display_name,lat:+x.lat,lng:+x.lon,z:(x.type==='city'||x.type==='administrative')?13:17}));
+      }catch(e){return []}
+    };
+    if(!list.length)list=await nom('&countrycodes=my');   // 先只在马来西亚找
+    if(!list.length)list=await nom(`&viewbox=${c.lng-1},${c.lat+1},${c.lng+1},${c.lat-1}`);
+    if(!list.length){   // 备用搜索：对店名、商场之类更宽松
+      const r=await fetch(`https://photon.komoot.io/api/?limit=8&lat=${c.lat}&lon=${c.lng}&q=${encodeURIComponent(q)}`);
+      const j=await r.json();
+      list=(j.features||[]).map(f=>{const pr=f.properties||{},g=f.geometry.coordinates;
+        return{t:[pr.name,pr.street,pr.district||pr.suburb,pr.city,pr.state,pr.country].filter(Boolean).join('，'),lat:g[1],lng:g[0],z:17}});
+    }
+    if(!list.length){box.innerHTML='<div class="none">没找到。可以在设置里填 Google Key，或点下面「用 Google 地图找」，找到后长按图钉复制坐标粘贴到这里。</div>';return}
+    show(list);
+  }catch(e){box.innerHTML='<div class="none">搜索失败，请检查网络</div>'}
+}
+function mpLocate(){
+  if(!navigator.geolocation){toast('这个浏览器不支持定位');return}
+  $('#mpName').textContent='定位中…';
+  navigator.geolocation.getCurrentPosition(p=>{mpGoto(p.coords.latitude,p.coords.longitude,17);buzz(10)},err=>{
+    $('#mpName').textContent='拖动地图，让图钉对准地点';
+    toast(err.code===1?'没有定位权限，请在浏览器设置中允许':'定位失败，请到信号好的地方再试');
+  },{enableHighAccuracy:true,timeout:12000,maximumAge:30000});
+}
+function closeMapEd(){$('#mapEd').classList.remove('show');$('#mpQ').blur()}
+async function openMapEd(){
+  const has=!!draft.loc;
+  try{await loadLeaflet()}catch(e){
+    /* 没网络：退回直接定位 */
+    toast('地图需要联网，改为直接记录当前位置');quickLoc();return;
+  }
+  $('#mapEd').classList.add('show');$('#mpRes').hidden=true;$('#mpQ').value='';
+  $('#mpClear').hidden=!has;
+  MP.custom=!!(has&&draft.loc.custom&&draft.loc.name);
+  $('#mpNameIn').value=has?(draft.loc.name||''):'';
+  if(!MP.map){
+    MP.map=L.map('mpMap',{zoomControl:false,attributionControl:true,tap:true}).setView([has?draft.loc.lat:3.139,has?draft.loc.lng:101.687],has?17:12);
+    L.control.zoom({position:'bottomleft'}).addTo(MP.map);
+    MP.map.on('moveend',mpUpdate);
+  }
+  mpSetLayer(mapType());
+  setTimeout(()=>{MP.map.invalidateSize();
+    if(has){MP.map.setView([draft.loc.lat,draft.loc.lng],17);mpUpdate()}
+    else{
+      /* 没有已选地点：先放大到当前位置 */
+      mpUpdate();mpLocate();
+    }
+  },320);
+}
+function quickLoc(){
   if(!navigator.geolocation){toast('这个浏览器不支持定位');return}
   $('#tLoc').textContent='定位中…';
   navigator.geolocation.getCurrentPosition(p=>{
@@ -1117,8 +1387,138 @@ $('#bLoc').onclick=e=>{
     renderAdd();
     toast(err.code===1?'没有定位权限，请在浏览器设置中允许':'定位失败，请到信号好的地方再试');
   },{enableHighAccuracy:true,timeout:12000,maximumAge:30000});
+}
+$('#bLoc').onclick=e=>{
+  if(e.target.id==='xLoc'){draft.loc=null;renderAdd();return}
+  openMapEd();
 };
+$('#mpNo').onclick=closeMapEd;
+$('#mpClear').onclick=()=>{draft.loc=null;closeMapEd();renderAdd()};
+$('#mpOk').onclick=()=>{
+  if(!MP.sel)return;
+  const nm=cleanTxt($('#mpNameIn').value).slice(0,40);
+  draft.loc={lat:MP.sel.lat,lng:MP.sel.lng,...(nm?{name:nm}:{}),...(nm&&MP.custom?{custom:true}:{})};
+  closeMapEd();renderAdd();toast('地点已记录');buzz(12);
+};
+$('#mpNameIn').addEventListener('input',e=>{MP.custom=!!e.target.value.trim()});
+$('#mpNameIn').addEventListener('blur',e=>{if(!MP.custom)e.target.value=MP.name||''});
+$('#mpNameIn').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();e.target.blur()}});
+$('#mpGo').onclick=mpSearch;
+$('#mpGoogle').onclick=e=>{const q=$('#mpQ').value.trim(),c=MP.map?MP.map.getCenter():null;e.currentTarget.href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q||(c?c.lat+','+c.lng:''))};
+$('#mpQ').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();mpSearch()}});
+$('#mpGps').onclick=mpLocate;
+$$('#mpLay button').forEach(b=>b.onclick=()=>{store.set('ledger.mapType',b.dataset.ml);mpSetLayer(b.dataset.ml);if(isOpen('Set'))renderSet()});
 
+/* ---------- 分账 ---------- */
+let spShowDone=false,spGroups=[];
+function spList(){return entries.filter(e=>e.split&&e.split.who&&e.split.amt>0)}
+function updateSpBadge(){
+  const n=entries.filter(e=>e.split&&!e.split.done&&e.split.amt>0).length,b=$('#spBdg');
+  if(!b)return;b.hidden=!n;b.textContent=n>99?'99+':n;
+}
+function splitNames(){
+  const out=[],seen=new Set();
+  [...entries].sort((a,b)=>b.ts-a.ts).forEach(e=>{if(e.split&&e.split.who&&!seen.has(e.split.who)){seen.add(e.split.who);out.push(e.split.who)}});
+  return out.slice(0,6);
+}
+function renderSpRecent(){
+  const l=splitNames(),el=$('#spRecent');
+  el.hidden=!l.length;
+  el.innerHTML=l.map(n=>`<button type="button" data-n="${esc(n)}">${esc(n)}</button>`).join('');
+  $$('#spRecent button').forEach(b=>b.onclick=()=>{$('#spWho').value=b.dataset.n;$('#spAmt').focus()});
+}
+function openSplitEd(){
+  const total=evalAmt(draft.amt);
+  if(!(total>0)){toast('先输入这笔的金额');return}
+  const s=draft.split;
+  $('#spWho').value=s?s.who:'';
+  $('#spAmt').value=s?s.amt:'';
+  $('#spHint').textContent=`这一笔共 ${fmt(total,draft.cur)}，其中对方应付：`;
+  $('#spDel').hidden=!s;
+  renderSpRecent();
+  $('#splitEd').classList.add('show');
+  setTimeout(()=>(s?$('#spAmt'):$('#spWho')).focus(),60);
+}
+function closeSplitEd(){$('#splitEd').classList.remove('show');$('#spWho').blur();$('#spAmt').blur()}
+$('#bSplit').onclick=e=>{if(e.target.id==='xSplit'){draft.split=null;renderAdd();return}openSplitEd()};
+$('#spNo').onclick=closeSplitEd;
+$('#spDel').onclick=()=>{draft.split=null;closeSplitEd();renderAdd()};
+$('#spHalf').onclick=()=>{const t=evalAmt(draft.amt),d=curOf(draft.cur).d;if(t>0)$('#spAmt').value=+(t/2).toFixed(d)};
+$('#spAll').onclick=()=>{const t=evalAmt(draft.amt);if(t>0)$('#spAmt').value=t};
+$('#spWho').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('#spAmt').focus()}});
+$('#spAmt').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('#spOk').click()}});
+$('#spOk').onclick=()=>{
+  const who=cleanTxt($('#spWho').value).slice(0,12),total=evalAmt(draft.amt),d=curOf(draft.cur).d;
+  const amt=+(+$('#spAmt').value).toFixed(d);
+  if(!who){toast('请填写是谁的');return}
+  if(!(amt>0)){toast('请填写对方应付的金额');return}
+  if(amt>total+1e-9){toast('分账金额不能超过这笔的总额');return}
+  draft.split={...(draft.split||{}),who,amt};
+  closeSplitEd();renderAdd();buzz(10);
+};
+$('#splitEd').addEventListener('click',e=>{if(e.target.id==='splitEd')closeSplitEd()});
+/* 标记收款 / 撤销 */
+function setSplitDone(ids,done,quiet){
+  const ch=[],add=[],rm=[];
+  ids.forEach(id=>{
+    const e=entries.find(x=>x.id===id);
+    if(!e||!e.split||!!e.split.done===done)return;
+    e.split.done=done;
+    if(done){
+      e.split.doneTs=Date.now();
+      /* 收到时自动记一笔收入，账户沿用原来那笔付款的账户 */
+      const inc={id:newId(),ts:e.split.doneTs,type:'inc',amt:e.split.amt,cur:e.cur,cat:'other_i',acc:e.acc||null,note:'收款：'+e.split.who+(e.note?'（'+e.note+'）':''),photo:null,loc:null,fromSplit:e.id};
+      entries.push(inc);e.split.incId=inc.id;add.push(inc);
+    }else{
+      delete e.split.doneTs;
+      if(e.split.incId){rm.push(e.split.incId);delete e.split.incId}
+    }
+    ch.push(e);
+  });
+  if(!ch.length)return;
+  if(rm.length){entries=entries.filter(x=>!rm.includes(x.id));rm.forEach(id=>unstore(id))}
+  persist(ch.concat(add));refreshAll();buzz(done?[20,30,12]:10);
+  if(quiet)toast(done?'已标记为已收到，并记入收入':'已恢复为待收，收入已移除');
+  else toast(done?(ch.length>1?`已收到 ${ch.length} 笔，已记入收入`:'已收到，已记入收入'):'已撤销收款，对应收入已移除',{label:'撤销',fn:()=>setSplitDone(ch.map(e=>e.id),!done,true)});
+}
+function renderSplit(){
+  const body=$('#splitBody'),top=body.scrollTop;
+  const all=spList(),pend=all.filter(e=>!e.split.done),done=all.filter(e=>e.split.done);
+  updateSpBadge();
+  if(!all.length){
+    body.innerHTML='<div class="blank">还没有分账。<br>记一笔时点「🤝 分账」，<br>填上是谁的、多少钱，<br>就会出现在这里。</div>';
+    return;
+  }
+  const money=o=>Object.keys(o).map(c=>fmt(o[c],c)).join(' / ');
+  const tot={};pend.forEach(e=>{tot[e.cur]=(tot[e.cur]||0)+e.split.amt});
+  const gmap={};spGroups=[];
+  [...pend].sort((a,b)=>b.ts-a.ts).forEach(e=>{
+    const k=e.split.who.toLowerCase();
+    if(!gmap[k]){gmap[k]={name:e.split.who,list:[],by:{}};spGroups.push(gmap[k])}
+    const g=gmap[k];g.list.push(e);g.by[e.cur]=(g.by[e.cur]||0)+e.split.amt;
+  });
+  const row=(e,who)=>{
+    const c=catOf(e),t=new Date(e.ts),sp=e.split,dt=sp.doneTs?new Date(sp.doneTs):null;
+    const sub=`${who?esc(sp.who)+'　':''}${t.getMonth()+1}月${t.getDate()}日　共 ${fmt(e.amt,e.cur)}${sp.done&&dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日收到':''}`;
+    return `<div class="srow${sp.done?' done':''}"><button class="row" data-id="${e.id}"><span class="ico">${c[1]}</span><span class="mid"><b>${esc(e.note||c[2])}</b><em>${sub}</em></span><span class="amt">${fmt(sp.amt,e.cur)}</span></button><button class="got" data-got="${e.id}">${sp.done?'撤销':'收到'}</button></div>`;
+  };
+  let h=`<div class="sp-sum"><div class="k">待收回</div><div class="v">${pend.length?money(tot):'<span style="color:var(--inc)">都收齐了 ✓</span>'}</div><div class="k">${pend.length?`${pend.length} 笔 · ${spGroups.length} 人`:`已收 ${done.length} 笔`}</div></div>`;
+  h+=spGroups.map((g,i)=>`<div class="sp-who"><div><b>${esc(g.name)}</b><span>${g.list.length} 笔 · ${money(g.by)}</span></div><button data-g="${i}">全部收到</button></div>`+g.list.map(e=>row(e,false)).join('')).join('');
+  if(done.length){
+    h+=`<button class="sp-tog" id="spTog">${spShowDone?'收起':'展开'}已收款（${done.length}）${spShowDone?'▴':'▾'}</button>`;
+    if(spShowDone)h+=[...done].sort((a,b)=>(b.split.doneTs||0)-(a.split.doneTs||0)).map(e=>row(e,true)).join('');
+  }
+  body.innerHTML=h;body.scrollTop=top;
+  $$('#splitBody [data-got]').forEach(b=>b.onclick=()=>{
+    const e=entries.find(x=>x.id===b.dataset.got);if(e&&e.split)setSplitDone([e.id],!e.split.done);
+  });
+  $$('#splitBody [data-g]').forEach(b=>b.onclick=async()=>{
+    const g=spGroups[+b.dataset.g];if(!g)return;
+    if(await ask({icon:'✓',title:`${g.name} 的钱都收到了？`,msg:`${g.list.length} 笔，共 ${money(g.by)}`,ok:'都收到了',danger:false}))setSplitDone(g.list.map(e=>e.id),true);
+  });
+  const tg=$('#spTog');if(tg)tg.onclick=()=>{spShowDone=!spShowDone;renderSplit()};
+}
+$('#openSplit').onclick=()=>{spShowDone=false;renderSplit();openSheet('Split')};
 
 /* ---------- 周期账目 ---------- */
 const FREQ_L={week:'每周',month:'每月',year:'每年'};
@@ -1287,12 +1687,16 @@ function applyVoice(raw){
 $('#doStamp').onclick=()=>{
   const a=evalAmt(draft.amt);if(!(a>0))return;
   const note=$('#note').value.trim(),edited=!!draft.id;
+  const sv=draft.type==='inc'?null:draft.split;
+  if(sv&&sv.amt>a+1e-9){toast('分账金额超过了这笔的总额，请调整');return}
   let e;
   if(edited){
     e=entries.find(x=>x.id===draft.id);if(!e)return;
     Object.assign(e,{type:draft.type,amt:a,cur:draft.cur,cat:draft.cat,acc:draft.acc||null,note,photo:draft.photo,loc:draft.loc,ts:draft.ts||e.ts});
+    if(sv)e.split={...sv};else delete e.split;
   }else{
     e={id:newId(),ts:draft.ts||Date.now(),type:draft.type,amt:a,cur:draft.cur,cat:draft.cat,acc:draft.acc||null,note,photo:draft.photo,loc:draft.loc};
+    if(sv)e.split={...sv};
     if(draft.rep){
       const d=new Date(e.ts),r={id:newId(),type:e.type,amt:a,cur:e.cur,cat:e.cat,acc:e.acc||null,note,freq:draft.rep,day:d.getDate(),month:d.getMonth(),wd:d.getDay(),last:dk(e.ts),off:false};
       e.rid=r.id;e.occ=dk(e.ts);recurs.push(r);saveRecurs();
@@ -1342,18 +1746,18 @@ function buildFilters(){
 function filtered(){
   const q=lf.q.trim().toLowerCase();
   return entries.filter(e=>{
-    if(lf.type!=='all'&&(isInc(e)?'inc':'exp')!==lf.type)return false;
+    if(lf.type!=='all'&&(e.type==='xfer'?'xfer':isInc(e)?'inc':'exp')!==lf.type)return false;
     if(lf.month!=='all'&&monthKey(e.ts)!==lf.month)return false;
     if(lf.cat!=='all'&&e.cat!==lf.cat)return false;
     if(lf.cur!=='all'&&e.cur!==lf.cur)return false;
-    if(lf.acc!=='all'&&(lf.acc==='none'?!!accOf(e):e.acc!==lf.acc))return false;
-    if(q){const hay=((e.note||'')+' '+catOf(e)[2]+' '+e.amt).toLowerCase();if(!hay.includes(q))return false}
+    if(lf.acc!=='all'&&(lf.acc==='none'?(!!accOf(e)&&!(e.type==='xfer'&&!accById(e.to))):(e.acc!==lf.acc&&!(e.type==='xfer'&&e.to===lf.acc))))return false;
+    if(q){const hay=((e.note||'')+' '+catOf(e)[2]+' '+e.amt+' '+(e.split?e.split.who:'')).toLowerCase();if(!hay.includes(q))return false}
     return true;
   }).sort((a,b)=>b.ts-a.ts);
 }
 function sumsText(list){
   const by={};
-  list.forEach(e=>{const o=by[e.cur]=by[e.cur]||{x:0,i:0};if(isInc(e))o.i+=e.amt;else o.x+=e.amt});
+  list.forEach(e=>{if(e.type==='xfer')return;const o=by[e.cur]=by[e.cur]||{x:0,i:0};if(isInc(e))o.i+=e.amt;else o.x+=e.amt});
   return Object.keys(by).map(c=>{
     const p=[];if(by[c].x>0)p.push('支出 '+fmt(by[c].x,c));if(by[c].i>0)p.push('收入 '+fmt(by[c].i,c));
     return p.join('　');
@@ -1397,7 +1801,7 @@ function renderCal(){
   const now=new Date(),base=new Date(now.getFullYear(),now.getMonth()+cal.off,1);
   const y=base.getFullYear(),m=base.getMonth(),dim=new Date(y,m+1,0).getDate(),lead=(base.getDay()+6)%7;
   const t0=base.getTime(),t1=new Date(y,m+1,1).getTime(),ym=y+'-'+pad2(m+1),key=d=>ym+'-'+pad2(d),todayK=dk(now);
-  const inM=entries.filter(e=>e.cur===cur&&e.ts>=t0&&e.ts<t1),by={};
+  const inM=entries.filter(e=>e.type!=='xfer'&&e.cur===cur&&e.ts>=t0&&e.ts<t1),by={};
   inM.forEach(e=>{const k=dk(e.ts),o=by[k]=by[k]||{x:0,i:0};if(isInc(e))o.i+=e.amt;else o.x+=e.amt});
   const mx=Math.max(1,...Object.values(by).map(o=>o.x));
   if(!cal.sel||cal.sel.slice(0,7)!==ym){
@@ -1412,7 +1816,7 @@ function renderCal(){
   }
   const [sy,sm,sd]=cal.sel.split('-').map(Number),sdate=new Date(sy,sm-1,sd);
   const dl=entries.filter(e=>e.cur===cur&&dk(e.ts)===cal.sel).sort((a,b)=>b.ts-a.ts);
-  const dx=sum(dl.filter(e=>!isInc(e))),di=sum(dl.filter(isInc));
+  const dx=sum(dl.filter(e=>!isInc(e)&&e.type!=='xfer')),di=sum(dl.filter(isInc));
   const parts=[dx>0?'支出 '+fmt(dx,cur):'',di>0?'收入 '+fmt(di,cur):''].filter(Boolean).join('　');
   const future=sdate.getTime()>Date.now();
   body.innerHTML=`
@@ -1448,19 +1852,26 @@ $('#calWrap').addEventListener('click',ev=>{
 function openDetail(id){
   const e=entries.find(x=>x.id===id);if(!e)return;
   const c=catOf(e),t=new Date(e.ts);
-  let h=`<div class="d-amt"><div class="num${isInc(e)?' inc':''}">${isInc(e)?'+':''}${fmt(e.amt,e.cur)}</div><p>${c[1]} ${c[2]}${accOf(e)?'　'+esc(accTxt(accOf(e))):''}　${t.getFullYear()}年${t.getMonth()+1}月${t.getDate()}日 ${pad2(t.getHours())}:${pad2(t.getMinutes())}</p></div>`;
+  let h=`<div class="d-amt"><div class="num${isInc(e)?' inc':''}">${isInc(e)?'+':''}${fmt(e.amt,e.cur)}</div><p>${c[1]} ${c[2]}${e.type==='xfer'?'　'+esc(xfRoute(e)):accOf(e)?'　'+esc(accTxt(accOf(e))):''}　${t.getFullYear()}年${t.getMonth()+1}月${t.getDate()}日 ${pad2(t.getHours())}:${pad2(t.getMinutes())}</p></div>`;
   if(e.note)h+=`<p class="d-note">${esc(e.note)}</p>`;
   if(e.photo)h+=`<img class="d-img" src="${e.photo}" alt="账目照片">`;
   if(e.loc){
     const q=`${e.loc.lat},${e.loc.lng}`;
-    h+=`<iframe class="d-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=${q}&z=16&output=embed" title="消费地点"></iframe>
+    if(e.loc.name)h+=`<p class="d-note">📍 ${esc(e.loc.name)}</p>`;
+    h+=`<iframe class="d-map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=${q}&z=16&t=${mapType()==='sat'?'k':'m'}&output=embed" title="消费地点"></iframe>
         <a class="d-link" href="https://www.google.com/maps?q=${q}" target="_blank" rel="noopener">在 Google 地图中打开</a>
         <div class="d-coord">${q}</div>`;
+  }
+  if(e.split&&e.split.who){
+    const sp=e.split,dt=sp.doneTs?new Date(sp.doneTs):null;
+    h+=`<div class="sp-card"><div class="sp-top"><b>🤝 ${esc(sp.who)}</b><span>${sp.done?'已收到'+(dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日':''):'待收'}</span></div><div class="sp-amt">${fmt(sp.amt,e.cur)}</div><button class="btn${sp.done?'':' fill'}" id="spToggle">${sp.done?'撤销收款':'标记已收到'}</button></div>`;
   }
   h+=`<div class="d-acts"><button class="btn danger" id="delBtn">删除</button><button class="btn" id="againBtn">再记一笔</button><button class="btn fill" id="editBtn">编辑</button></div>`;
   $('#detailBody').innerHTML=h;
   $('#editBtn').onclick=()=>{closeSheet('Detail');openEdit(id)};
+  const spT=$('#spToggle');if(spT)spT.onclick=()=>{setSplitDone([id],!e.split.done);openDetail(id)};
   $('#againBtn').onclick=()=>{
+    if(e.type==='xfer'){closeSheet('Detail');openXfer(null,e);return}
     closeSheet('Detail');openAdd();
     Object.assign(draft,{type:e.type||'exp',cat:e.cat,cur:e.cur,amt:String(e.amt),acc:accById(e.acc)?e.acc:draft.acc});
     $('#note').value=e.note||'';renderCats();renderAdd();
@@ -1495,7 +1906,7 @@ function renderStats(){
   $('#stCur').textContent=curTag(cur)+' ▾';
   const now=new Date(),mode=sp.mode;
   const R=rangeFor(mode,sp.off),P=rangeFor(mode,sp.off-1);
-  const inRange=(e,r)=>e.cur===cur&&e.ts>=r.start.getTime()&&e.ts<r.endEx.getTime();
+  const inRange=(e,r)=>e.type!=='xfer'&&e.cur===cur&&e.ts>=r.start.getTime()&&e.ts<r.endEx.getTime();
   const inR=entries.filter(e=>inRange(e,R));
   const exps=inR.filter(e=>!isInc(e)),incs=inR.filter(isInc);
   const sumE=sum(exps),sumI=sum(incs),bal=sumI-sumE;
@@ -1574,17 +1985,22 @@ $('#statsBody').addEventListener('click',ev=>{
 });
 
 /* ---------- 账户页 ---------- */
-function accBal(list,c){
-  // list: 属于这个账户的账目；返回某币种的余额（收入 − 支出）
-  return list.filter(e=>e.cur===c).reduce((t,e)=>t+(isInc(e)?e.amt:-e.amt),0);
+const xfMatch=(x,id)=>id?x===id:!accById(x);
+const accInv=(e,id)=>e.type==='xfer'?(xfMatch(e.acc,id)||xfMatch(e.to,id)):xfMatch(e.acc,id);
+function accBal(list,c,id){
+  // list: 和这个账户有关的账目；返回某币种的余额（收入 − 支出 ± 转账）。id 为 null 表示“未指定账户”
+  return list.filter(e=>e.cur===c).reduce((t,e)=>{
+    if(e.type==='xfer')return t-(xfMatch(e.acc,id)?e.amt:0)+(xfMatch(e.to,id)?e.amt:0);
+    return t+(isInc(e)?e.amt:-e.amt);
+  },0);
 }
 function renderAcc(){
   const body=$('#accBody'),top=body.scrollTop;
   $('#acCur').textContent=curTag(cur)+' ▾';
-  const rows=ACCS.map(a=>({a,list:entries.filter(e=>e.acc===a.id)}));
-  const loose=entries.filter(e=>!accOf(e));
-  const balOf=(a,list,c)=>(a&&a.init&&a.init[c]||0)+accBal(list,c);
-  const totalCur=rows.reduce((t,r)=>t+balOf(r.a,r.list,cur),0)+accBal(loose,cur);
+  const rows=ACCS.map(a=>({a,list:entries.filter(e=>accInv(e,a.id))}));
+  const loose=entries.filter(e=>accInv(e,null));
+  const balOf=(a,list,c)=>(a&&a.init&&a.init[c]||0)+accBal(list,c,a?a.id:null);
+  const totalCur=rows.reduce((t,r)=>t+balOf(r.a,r.list,cur),0)+accBal(loose,cur,null);
   const money=(v,c)=>(v<0?'-':'')+fmt(Math.abs(v),c);
   const others=(a,list)=>{
     const cs=new Set(list.map(e=>e.cur));if(a&&a.init)Object.keys(a.init).forEach(c=>cs.add(c));
@@ -1599,20 +2015,21 @@ function renderAcc(){
     <div class="aTotal"><div class="k">总资产（${cur}）</div><div class="v${totalCur<0?' neg':''}">${money(totalCur,cur)}</div></div>
     ${rows.map((r,i)=>rowH(r.a,r.list,i)).join('')}
     ${loose.length?rowH(null,loose,null):''}
-    <button class="btn fill" id="acAdd" style="width:100%;margin-top:18px">＋ 添加账户</button>
-    <p class="hint">余额 = 初始余额 + 收入 − 支出，按币种分开算。点一个账户可改名称、图标和初始余额。切换右上角的货币，可以看其他币种的余额。</p>`;
+    <div style="display:flex;gap:10px;margin-top:18px"><button class="btn" id="acXfer" style="flex:1">⇄ 转账</button><button class="btn fill" id="acAdd" style="flex:1">＋ 添加账户</button></div>
+    <p class="hint">余额 = 初始余额 + 收入 − 支出，转账会从一个账户扣、另一个账户加（不算收入或支出），按币种分开算。点一个账户可改名称、图标和初始余额。切换右上角的货币，可以看其他币种的余额。</p>`;
   body.scrollTop=top;
 }
 $('#accBody').addEventListener('click',async ev=>{
-  const t=ev.target.closest('[data-ae],[data-loose],#acAdd');if(!t)return;
+  const t=ev.target.closest('[data-ae],[data-loose],#acAdd,#acXfer');if(!t)return;
   if(t.id==='acAdd'){openAccEd(null);return}
+  if(t.id==='acXfer'){openXfer();return}
   if(t.dataset.ae!=null){openAccEd(+t.dataset.ae);return}
   // 批量归入
-  const loose=entries.filter(e=>!accOf(e));if(!loose.length||!ACCS.length)return;
+  const loose=entries.filter(e=>accInv(e,null));if(!loose.length||!ACCS.length)return;
   openPick('把未指定的账目归入',[{items:ACCS.map(a=>[a.id,esc(accTxt(a))])}],'',async id=>{
     const a=accById(id);if(!a)return;
     if(!await ask({icon:'账',title:`归入「${a.name}」？`,msg:`${loose.length} 笔没有账户的账目会全部归入这个账户。`,ok:'归入',danger:false}))return;
-    loose.forEach(e=>{e.acc=id});await persist(loose);refreshAll();toast('已归入');
+    loose.forEach(e=>{if(e.type==='xfer'){if(!accById(e.acc))e.acc=id;if(!accById(e.to))e.to=id}else e.acc=id});await persist(loose);refreshAll();toast('已归入');
   });
 });
 const ACC_EMOJIS=['💵','📱','💳','🏦','👛','💰','🪙','🧧','🏧','📈','🐷','🏠','🚗','🎓','🛒','💼'];
@@ -1649,15 +2066,77 @@ $('#aeOk').onclick=()=>{
 };
 $('#aeDel').onclick=async()=>{
   const a=ACCS[aed.i];if(!a)return;
-  const moved=entries.filter(e=>e.acc===a.id);
+  const moved=entries.filter(e=>e.acc===a.id||e.to===a.id);
   closeAccEd();
   if(!await ask({icon:'删',title:`删除「${a.name}」？`,msg:moved.length?`这个账户下的 ${moved.length} 笔账目会变成“未指定账户”，账目本身不会被删除。`:'这个账户下还没有账目。',ok:'删除'}))return;
-  moved.forEach(e=>{e.acc=null});
+  moved.forEach(e=>{if(e.acc===a.id)e.acc=null;if(e.to===a.id)e.to=null});
   recurs.forEach(r=>{if(r.acc===a.id)r.acc=null});saveRecurs();
   ACCS=ACCS.filter(x=>x.id!==a.id);saveAccs();
   if(moved.length)await persist(moved);
   if(lf.acc===a.id)lf.acc='all';
   refreshAll();toast('账户已删除');
+};
+
+/* ---------- 账户间转账 ---------- */
+let xf=null;
+function xfBalText(){
+  const a=accById(xf.from);if(!a){$('#xfBal').textContent='';return}
+  const list=entries.filter(e=>accInv(e,a.id)&&e.id!==xf.id);
+  const v=(a.init&&a.init[xf.cur]||0)+accBal(list,xf.cur,a.id);
+  $('#xfBal').textContent=`${a.name} 现有 ${v<0?'-':''}${fmt(Math.abs(v),xf.cur)}`;
+}
+function renderXf(){
+  const mk=cur=>ACCS.map(a=>`<button type="button" data-id="${esc(a.id)}" aria-pressed="${a.id===cur}">${a.icon} ${esc(a.name)}</button>`).join('');
+  $('#xfFrom').innerHTML=mk(xf.from);$('#xfTo').innerHTML=mk(xf.to);
+  $('#xfAmtLab').textContent=`金额（${xf.cur}）`;
+  xfBalText();
+}
+function openXfer(e,pre){
+  if(ACCS.length<2){toast('至少要有两个账户才能转账，先添加一个吧');return}
+  const src=e||pre||null;
+  const from=src&&accById(src.acc)?src.acc:defAcc();
+  const to=src&&accById(src.to)&&src.to!==from?src.to:(ACCS.find(a=>a.id!==from)||{}).id;
+  xf={id:e?e.id:null,from,to,cur:src?src.cur:cur};
+  $('#xfT').textContent=e?'编辑转账':'转账';
+  $('#xfOk').textContent=e?'保存':'转账';
+  $('#xfAmt').value=src?src.amt:'';
+  $('#xfNote').value=src&&src.note||'';
+  $('#xfDt').max=toLocalInput(Date.now());
+  $('#xfDt').value=toLocalInput(e?e.ts:Date.now());
+  renderXf();
+  $('#xfEd').classList.add('show');
+  if(!src)setTimeout(()=>$('#xfAmt').focus(),150);
+}
+function closeXfer(){$('#xfEd').classList.remove('show');['#xfAmt','#xfNote','#xfDt'].forEach(s=>$(s).blur())}
+function pickXf(side,id){
+  if(!xf)return;
+  const other=side==='from'?'to':'from';
+  if(xf[other]===id)xf[other]=xf[side];   // 选到和另一边相同的账户时，两边对调
+  xf[side]=id;renderXf();buzz(8);
+}
+$('#xfFrom').addEventListener('click',ev=>{const b=ev.target.closest('[data-id]');if(b)pickXf('from',b.dataset.id)});
+$('#xfTo').addEventListener('click',ev=>{const b=ev.target.closest('[data-id]');if(b)pickXf('to',b.dataset.id)});
+$('#xfNo').onclick=closeXfer;
+$('#xfEd').addEventListener('click',e=>{if(e.target.id==='xfEd')closeXfer()});
+$('#xfNote').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();$('#xfOk').click()}});
+$('#xfOk').onclick=()=>{
+  if(!xf)return;
+  if(!accById(xf.from)||!accById(xf.to)||xf.from===xf.to){toast('请选两个不同的账户');return}
+  const f=Math.pow(10,curOf(xf.cur).d),v=Math.round(parseFloat($('#xfAmt').value)*f)/f;
+  if(!(v>0)){toast('请输入转账金额');return}
+  const note=cleanTxt($('#xfNote').value).slice(0,40);
+  let ts=new Date($('#xfDt').value).getTime();if(!isFinite(ts))ts=Date.now();ts=Math.min(ts,Date.now());
+  let e;
+  if(xf.id){
+    e=entries.find(x=>x.id===xf.id);if(!e){closeXfer();return}
+    Object.assign(e,{amt:v,acc:xf.from,to:xf.to,note,ts});
+  }else{
+    e={id:newId(),ts,type:'xfer',amt:v,cur:xf.cur,cat:'xfer',acc:xf.from,to:xf.to,note,photo:null,loc:null};
+    entries.push(e);
+  }
+  store.set('ledger.lastAcc',e.acc);
+  const msg=`${xf.id?'已更新':'已转账'}：${accById(e.acc).name} → ${accById(e.to).name}　${fmt(v,e.cur)}`;
+  persist(e);closeXfer();refreshAll();toast(msg);buzz([20,30,12]);
 };
 
 /* ---------- 分类管理 ---------- */
@@ -1749,10 +2228,14 @@ function renderSet(){
     <div class="grp">月预算</div>
     <div class="hint" style="margin-top:0">每种货币单独设置。当前：${cu.c}（${cu.n}）。留空并保存可取消预算。</div>
     <div class="bg-in"><input class="fld" id="bgIn" type="number" inputmode="decimal" min="0" placeholder="例如 2000" value="${budgets[cur]||''}"><button class="btn fill" id="bgSave">保存</button></div>
+    <div class="grp">地点搜索（可选）</div>
+    <div class="hint" style="margin-top:0">填入你自己的 Google Places API Key 后，搜索会优先用 Google，可以直接搜「NU Sentral」这类店名、商场。留空则使用免费搜索。Key 只保存在这台设备上，不会随备份或同步导出。</div>
+    <div class="bg-in"><input class="fld" id="gkIn" type="password" autocomplete="off" placeholder="AIza…" value="${esc(store.get('ledger.gkey')||'')}"><button class="btn fill" id="gkSave">保存</button></div>
     <div class="grp">通用</div>
     <button class="setrow" id="setCur">默认货币<span>${cu.c} ${cu.s} ▸</span></button>
     <button class="setrow" id="setAcc">账户<span>${ACCS.length} 个 ▸</span></button>
     <button class="setrow" id="setRecur">周期账目<span>${recurs.length} 个 ▸</span></button>
+    <button class="setrow" id="setMap">地图类型<span>${mapType()==='sat'?'卫星':'普通'} ▸</span></button>
     <button class="setrow" id="setCats">分类管理<span>${CATS.length} 个支出 · ${INCS.length} 个收入 ▸</span></button>
     ${Sync.html()}
     <div class="grp">数据</div>
@@ -1771,9 +2254,11 @@ function renderSet(){
     if(v>0){budgets[cur]=v;toast('预算已保存')}else{delete budgets[cur];toast('已取消预算')}
     store.set('ledger.budgets',budgets);render();
   };
+  $('#gkSave').onclick=()=>{const v=$('#gkIn').value.trim();if(v){store.set('ledger.gkey',v);toast('已保存，地点搜索将优先使用 Google')}else{try{localStorage.removeItem('ledger.gkey')}catch(e){}delete store.mem['ledger.gkey'];toast('已清除，改用免费搜索')}};
   $('#setCur').onclick=()=>pickCur('global');
   $('#setAcc').onclick=()=>{renderAcc();openSheet('Acc')};
   $('#setRecur').onclick=()=>{renderRecur();openSheet('Recur')};
+  $('#setMap').onclick=()=>openPick('地图类型',[{items:[['map','普通地图'],['sat','卫星图']]}],mapType(),v=>{store.set('ledger.mapType',v);renderSet()});
   $('#setCats').onclick=()=>{cmType='exp';renderCatMgr();openSheet('Cats')};
   $('#bkEvery').onclick=()=>openPick('备份提醒周期',[{items:[['14','每 2 周'],['30','每月'],['90','每 3 个月'],['0','不提醒']]}],String(bkDays()),v=>{store.set('ledger.bkEvery',+v);renderSet()});
   $('#exCsv').onclick=exportCSV;
@@ -1802,10 +2287,10 @@ function download(name,text,type){
 async function exportCSV(){
   if(!entries.length){toast('还没有账目可导出');return}
   const q=s=>'"'+String(s??'').replace(/"/g,'""')+'"';
-  const rows=[['日期','时间','类型','分类','账户','金额','币种','备注','纬度','经度']];
+  const rows=[['日期','时间','类型','分类','账户','金额','币种','备注','纬度','经度','分账对象','分账金额','分账状态']];
   [...entries].sort((a,b)=>a.ts-b.ts).forEach(e=>{
     const d=new Date(e.ts);
-    rows.push([dk(d),pad2(d.getHours())+':'+pad2(d.getMinutes()),isInc(e)?'收入':'支出',catOf(e)[2],accOf(e)?accOf(e).name:'',e.amt,e.cur,e.note||'',e.loc?e.loc.lat:'',e.loc?e.loc.lng:'']);
+    rows.push([dk(d),pad2(d.getHours())+':'+pad2(d.getMinutes()),e.type==='xfer'?'转账':isInc(e)?'收入':'支出',catOf(e)[2],e.type==='xfer'?xfRoute(e):accOf(e)?accOf(e).name:'',e.amt,e.cur,e.note||'',e.loc?e.loc.lat:'',e.loc?e.loc.lng:'',e.split?e.split.who:'',e.split?e.split.amt:'',e.split?(e.split.done?'已收':'待收'):'']);
   });
   const r=await deliver('记账-'+dk(Date.now())+'.csv','\ufeff'+rows.map(r=>r.map(q).join(',')).join('\n'),'text/csv');
   if(r!=='cancel')toast('CSV 已导出');
@@ -1824,6 +2309,12 @@ $('#importFile').onchange=async ev=>{
     if(!Array.isArray(list))throw 0;
     const ids=new Set(entries.map(e=>e.id));
     const add=list.filter(e=>e&&e.id&&e.ts&&e.amt>0&&!ids.has(e.id));
+    add.forEach(e=>{
+      if(e.type==='xfer'){e.to=cleanTxt(e.to)||null;e.cat='xfer'}
+      const sp=e.split;if(sp===undefined)return;
+      const who=sp&&typeof sp==='object'?cleanTxt(sp.who).slice(0,12):'';
+      if(who&&+sp.amt>0)e.split={who,amt:+sp.amt,done:!!sp.done,...(sp.done&&+sp.doneTs?{doneTs:+sp.doneTs}:{}),...(sp.done&&sp.incId?{incId:cleanTxt(sp.incId)}:{})};else delete e.split;
+    });
     entries=entries.concat(add);
     if(data.budgets&&typeof data.budgets==='object'){for(const k in data.budgets)if(!(k in budgets))budgets[k]=data.budgets[k];store.set('ledger.budgets',budgets)}
     if(data.cats&&typeof data.cats==='object'){
@@ -1861,7 +2352,7 @@ $('#importFile').onchange=async ev=>{
 
 
 /* ---------- 云同步（Supabase）：本地优先，登录后在后台与云端合并 ---------- */
-const SB_URL='',SB_KEY='';   // ← 填入 Supabase 的 Project URL 和 anon public key（见部署说明）
+const SB_URL='https://ifziofobeqmwaanxmagv.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlmemlvZm9iZXFtd2FhbnhtYWd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3MjIxMTcsImV4cCI6MjEwOTI5ODExN30.6Mhpf5hRP5VuwpUon2OW6FUnz6QxK5T1K939uYg1j4s';   // ← 填入 Supabase 的 Project URL 和 anon public key（见部署说明）
 const Sync=(()=>{
   const on=!!(SB_URL&&SB_KEY),PAGE=40;
   let auth=store.get('ledger.sb'),busy=false,timer=null,msg='';
@@ -1869,7 +2360,8 @@ const Sync=(()=>{
   M.pull=M.pull||'';M.dirty=M.dirty||{};M.kv=M.kv||{};M.kvAt=M.kvAt||{};M.kvInit=!!M.kvInit;
   const save=()=>store.set('ledger.syncmeta',M);
   const stEl=()=>$('#syncSt');
-  function setMsg(t){msg=t;const el=stEl();if(el)el.textContent=t}
+  function setMsg(t){msg=t;const el=stEl();if(el)el.textContent=t;const g=$('#gMsg');if(g)g.textContent=t}
+  function gate(){const g=$('#gate');if(g)g.classList.toggle('show',on&&!auth)}
   function sched(ms){clearTimeout(timer);if(on&&auth)timer=setTimeout(run,ms||2500)}
   function mark(ids,t){if(!on||!auth)return;ids.forEach(id=>{M.dirty[String(id)]=t});save();sched()}
   function markKv(k){if(!on||!auth||Sync.applying)return;M.kv[k]=1;save();sched()}
@@ -1887,7 +2379,7 @@ const Sync=(()=>{
     if(!auth)throw new Error('未登录');
     if(Date.now()<auth.exp)return auth.access;
     try{setAuth(await authReq('token?grant_type=refresh_token',{refresh_token:auth.refresh}))}
-    catch(e){if(navigator.onLine&&/refresh|invalid|expired|not found/i.test(e.message)){auth=null;store.set('ledger.sb',null)}throw e}
+    catch(e){if(navigator.onLine&&/refresh|invalid|expired|not found/i.test(e.message)){auth=null;store.set('ledger.sb',null);gate()}throw e}
     return auth.access;
   }
   async function rest(method,path,body,prefer){
@@ -1975,10 +2467,19 @@ const Sync=(()=>{
       const uidChanged=M.uid&&M.uid!==auth.uid;
       if(uidChanged||!M.uid){M.pull='';M.kvAt={};M.kv={};M.kvInit=false;M.dirty={}}
       M.uid=auth.uid;entries.forEach(e=>{M.dirty[String(e.id)]='u'});save();
-      renderSet();toast('已登录，开始同步');run(true);
+      gate();setMsg('');renderSet();toast('已登录，开始同步');run(true);
     }catch(e){setMsg('');toast((signup?'注册':'登录')+'失败：'+e.message)}
   }
-  function logout(){auth=null;store.set('ledger.sb',null);clearTimeout(timer);renderSet();toast('已退出登录，本机数据保留')}
+  async function logout(){
+    if(!await ask({title:'退出登录？',msg:'会先同步一次，然后清除本机上的账目（云端数据不受影响）。',ok:'退出'}))return;
+    try{if(navigator.onLine){await push();await pull()}}catch(e){
+      if(!await ask({title:'同步失败',msg:'还有数据没传到云端，现在退出会丢失它们。仍要退出吗？',ok:'仍然退出'}))return;
+    }
+    clearTimeout(timer);
+    try{if(DB.ok)await DB.clear()}catch(_){}
+    try{Object.keys(localStorage).filter(k=>k.startsWith('ledger.')&&k!=='ledger.theme').forEach(k=>localStorage.removeItem(k))}catch(_){}
+    location.reload();
+  }
   const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   function html(){
     if(!on)return `<div class="grp">云同步</div><p class="hint" style="margin-top:0">还没有配置 Supabase：把 Project URL 和 anon key 填进代码顶部的 SB_URL / SB_KEY 后，这里就能登录同步。</p>`;
@@ -1997,6 +2498,11 @@ const Sync=(()=>{
     else{$('#syNow').onclick=()=>run(true);$('#syOut').onclick=logout}
   }
   syncMark=mark;syncKv=markKv;
+  const gem=$('#gEm'),gpw=$('#gPw');
+  $('#gIn').onclick=()=>login(gem.value.trim(),gpw.value,false);
+  $('#gUp').onclick=()=>login(gem.value.trim(),gpw.value,true);
+  gpw.addEventListener('keydown',e=>{if(e.key==='Enter')login(gem.value.trim(),gpw.value,false)});
+  gate();
   window.addEventListener('online',()=>sched(800));
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)sched(800)});
   setInterval(()=>{if(!document.hidden)sched(100)},180000);
@@ -2022,8 +2528,8 @@ render();
 setInterval(()=>{if(!document.hidden){render();runRecurs()}},60000);
 /* ---------- 系统“返回”手势 / 返回键：先关最上面一层，而不是直接退出页面 ---------- */
 (function(){
-  const LAY=[['dlg','#dlg'],['catEd','#catEd'],['accEd','#accEd'],['Pick','#sheetPick'],['Cur','#sheetCur'],['Detail','#sheetDetail'],
-             ['Recur','#sheetRecur'],['Acc','#sheetAcc'],['Cats','#sheetCats'],['Set','#sheetSet'],['Stats','#sheetStats'],['Ledger','#sheetLedger'],['Add','#sheetAdd']];
+  const LAY=[['dlg','#dlg'],['catEd','#catEd'],['accEd','#accEd'],['xfEd','#xfEd'],['splitEd','#splitEd'],['Pick','#sheetPick'],['Cur','#sheetCur'],['Detail','#sheetDetail'],
+             ['Recur','#sheetRecur'],['Split','#sheetSplit'],['Acc','#sheetAcc'],['Cats','#sheetCats'],['Set','#sheetSet'],['Stats','#sheetStats'],['Ledger','#sheetLedger'],['Add','#sheetAdd']];
   const isOn=el=>el.classList.contains('open')||el.classList.contains('show');
   let stack=[],guard=false,skip=0;
   function closeTop(){
@@ -2031,6 +2537,8 @@ setInterval(()=>{if(!document.hidden){render();runRecurs()}},60000);
     if(n==='dlg'){dlgRes&&dlgRes(false)}
     else if(n==='catEd'){closeCatEd()}
     else if(n==='accEd'){closeAccEd()}
+    else if(n==='xfEd'){closeXfer()}
+    else if(n==='splitEd'){closeSplitEd()}
     else if(n==='Pick'){closePick()}
     else closeSheet(n);
   }
@@ -2053,11 +2561,6 @@ setInterval(()=>{if(!document.hidden){render();runRecurs()}},60000);
     if(stack.length&&!guard){history.pushState({ledgerLayer:1},'');guard=true}
   });
 })();
-
-/* ---------- PWA：离线缓存（仅在 https / localhost 下生效） ---------- */
-if('serviceWorker' in navigator&&/^https?:$/.test(location.protocol)){
-  window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{})});
-}
 
 document.addEventListener('visibilitychange',()=>{if(!document.hidden){render();runRecurs()}});
 })();
