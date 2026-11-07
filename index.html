@@ -522,6 +522,21 @@ select.fld{padding:0 8px;height:40px;min-width:0;appearance:none;-webkit-appeara
 .sp-add{width:100%;height:42px;margin:14px 0 2px;border-radius:12px;border:1.5px dashed var(--line);color:var(--mute);font-size:14px}
 .sp-ok{text-align:center;padding:14px 0 0;color:var(--inc);font-size:13.5px}
 #splitBody .seg{margin-top:14px}
+.sp-bar{height:5px;border-radius:3px;background:color-mix(in srgb,var(--line) 70%,transparent);margin:8px 0 4px;overflow:hidden}
+.sp-bar i{display:block;height:100%;width:0;border-radius:3px;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.sp-bar.inn i{background:var(--inc)}
+.sp-bar.out i{background:var(--seal)}
+.sp-cap{font-size:11.5px;color:var(--mute);font-variant-numeric:tabular-nums;line-height:1.35}
+.sp-id{display:flex;align-items:center;gap:11px;min-width:0}
+.sp-ava{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--serif);font-weight:700;font-size:17px;line-height:1;color:var(--c);border:2px solid var(--c);background:color-mix(in srgb,var(--c) 12%,transparent);box-shadow:inset 0 0 0 2.5px color-mix(in srgb,var(--paper) 80%,transparent),inset 0 0 0 3.5px color-mix(in srgb,var(--c) 55%,transparent);transform:rotate(var(--r,0deg))}
+.sp-tag{display:inline-block;padding:0 6px;border-radius:5px;font-size:11px;line-height:17px;font-style:normal;border:1px solid var(--line);color:var(--mute);vertical-align:1px;white-space:nowrap}
+.sp-tag+.sp-tag{margin-left:4px}
+.sp-tag.wait{border-style:dashed}
+.sp-tag.sent{color:var(--ink)}
+.sp-tag.seen{color:var(--seal);border-color:color-mix(in srgb,var(--seal) 55%,transparent)}
+.sp-tag.done{color:var(--inc);border-color:color-mix(in srgb,var(--inc) 55%,transparent)}
+.sp-tag.new{background:var(--seal);border-color:var(--seal);color:var(--on-seal)}
+@media (prefers-reduced-motion:reduce){.sp-bar i{transition:none}}
 .sp-card{margin:16px 0 0;padding:14px 16px;border-radius:14px;border:1.5px dashed var(--mute);background:var(--card)}
 .sp-top{display:flex;justify-content:space-between;align-items:baseline;font-size:13.5px;color:var(--mute)}
 .sp-top b{color:var(--ink);font-family:var(--serif);font-size:16px}
@@ -1723,15 +1738,43 @@ $$('#mpLay button').forEach(b=>b.onclick=()=>{store.set('ledger.mapType',b.datas
 
 /* ---------- 分账 ---------- */
 let spShowDone=false,spGroups=[],oGroups=[],spTab='recv',spMode='split',spEditDebt=null;
+let spPrev={p:{},n:{}};const spAnim={},spSeenSent=new Set();   /* 进度条 / 滚动数字上一次的值；已通知对方「我看到了」的记录 */
 var debts=store.get('ledger.debts')||[];   /* 手动记的「我欠别人」（没有邮箱的）；var 是为了早期 render 也不会报错 */
 function saveDebts(){store.set('ledger.debts',debts)}
 const owesList=()=>store.get('ledger.owes')||[];                 /* 别人用我的邮箱记给我的（云端拉下来的缓存） */
 const autoRepay=()=>store.get('ledger.autoRepay')!==false;       /* 还款时自动记一笔支出，默认开 */
 const splitKey=s=>{const i=s.indexOf(':');return [s.slice(0,i),s.slice(i+1)]};
 function spList(){return entries.filter(e=>e.split&&e.split.who&&e.split.amt>0)}
+/* 头像圆章：名字首字 + 按名字固定的颜色和微倾角，像盖歪了的章 */
+function avatar(name){
+  const nm=String(name||'?'),low=nm.toLowerCase();let h=0;
+  for(const ch of low)h=(h*31+ch.codePointAt(0))>>>0;
+  const ch=(Array.from(nm.split('@')[0].trim())[0]||'?').toUpperCase();
+  return `<i class="sp-ava" style="--c:hsl(${h%360},48%,44%);--r:${(h%13)-6}deg">${esc(ch)}</i>`;
+}
+/* 同步状态标签：待发送 → 已送达 → 对方已看到 → 已结清（只有带邮箱的才有） */
+function spTag(e){
+  const s=e.split;if(!s||!s.email)return null;
+  if(s.done)return ['done','已结清'];
+  const st=(store.get('ledger.spstat')||{})[s.sid];
+  if(!st)return ['wait','待发送'];
+  return st.seen?['seen','对方已看到']:['sent','已送达'];
+}
+const tagHtml=t=>t?`<span class="sp-tag ${t[0]}">${t[1]}</span>`:'';
+function rollNum(el,from,to,c,key){
+  cancelAnimationFrame(spAnim[key]);
+  const t0=performance.now(),q=Math.pow(10,curOf(c).d);
+  el.textContent=fmt(from,c);
+  const step=now=>{
+    const k=Math.min(1,(now-t0)/650),v=Math.round((from+(to-from)*(1-Math.pow(1-k,3)))*q)/q;
+    el.textContent=fmt(k<1?v:to,c);
+    if(k<1)spAnim[key]=requestAnimationFrame(step);
+  };
+  spAnim[key]=requestAnimationFrame(step);
+}
 function oweItems(){
   const out=[];
-  owesList().forEach(o=>out.push({k:'s',id:o.id,who:o.ce,amt:o.amt,cur:o.cur,note:o.note||'',ts:o.ts,done:o.st==='settled',doneTs:o.at||0}));
+  owesList().forEach(o=>out.push({k:'s',id:o.id,who:o.ce,amt:o.amt,cur:o.cur,note:o.note||'',ts:o.ts,done:o.st==='settled',doneTs:o.at||0,seen:!!o.seen}));
   (debts||[]).forEach(d=>out.push({k:'m',id:d.id,who:d.who,amt:d.amt,cur:d.cur,note:d.note||'',ts:d.ts,done:!!d.done,doneTs:d.doneTs||0}));
   return out;
 }
@@ -1918,7 +1961,23 @@ function renderSplit(){
   const net={};[...Object.keys(rt),...Object.keys(ot)].forEach(c=>{net[c]=Math.round(((rt[c]||0)-(ot[c]||0))*1e6)/1e6});
   const nk=Object.keys(net).filter(c=>net[c]!==0);
   const netTxt=(pend.length&&opend.length)?(nk.length?'相抵后：'+nk.map(c=>(net[c]>0?'别人还欠我 ':'我还欠别人 ')+fmt(Math.abs(net[c]),c)).join(' / '):'相抵后刚好两清'):'';
-  let h=`<div class="sp-sum"><div class="sp-two"><div><div class="k">别人欠我</div><div class="v inn">${pend.length?money(rt):'—'}</div></div><div><div class="k">我欠别人</div><div class="v out">${opend.length?money(ot):'—'}</div></div></div>${netTxt?`<div class="sp-net">${netTxt}</div>`:''}</div>`;
+  /* 进度：同一种货币按金额算，多种货币按笔数算 */
+  const prog=(items,verb)=>{
+    if(!items.length)return null;
+    const cs=[...new Set(items.map(x=>x.cur))];
+    if(cs.length===1){
+      const tot=items.reduce((t,x)=>t+x.amt,0),dn=items.filter(x=>x.done).reduce((t,x)=>t+x.amt,0);
+      return {p:tot>0?dn/tot*100:0,cap:`${verb} ${fmt(dn,cs[0])} / ${fmt(tot,cs[0])}`};
+    }
+    const dn=items.filter(x=>x.done).length;
+    return {p:dn/items.length*100,cap:`${verb} ${dn} / ${items.length} 笔`};
+  };
+  const col=(key,label,cls,pendN,tot,pr)=>{
+    const cs=Object.keys(tot),one=pendN&&cs.length===1;
+    return `<div><div class="k">${label}</div><div class="v ${cls}" data-roll="${key}"${one?` data-val="${tot[cs[0]]}" data-cur="${cs[0]}"`:''}>${pendN?money(tot):'—'}</div>${pr?`<div class="sp-bar ${cls}"><i data-key="${key}" data-p="${pr.p.toFixed(1)}" style="width:${spPrev.p[key]||0}%"></i></div><div class="sp-cap">${pr.cap}</div>`:''}</div>`;
+  };
+  const rp=prog(all.map(e=>({amt:e.split.amt,cur:e.cur,done:!!e.split.done})),'已收回'),op=prog(oall,'已还');
+  let h=`<div class="sp-sum"><div class="sp-two">${col('recv','别人欠我','inn',pend.length,rt,rp)}${col('owe','我欠别人','out',opend.length,ot,op)}</div>${netTxt?`<div class="sp-net">${netTxt}</div>`:''}</div>`;
   h+=`<div class="seg"><button data-tab="recv" aria-pressed="${spTab==='recv'}">别人欠我${pend.length?'（'+pend.length+'）':''}</button><button data-tab="owe" aria-pressed="${spTab==='owe'}">我欠别人${opend.length?'（'+opend.length+'）':''}</button></div>`;
   spGroups=[];oGroups=[];
   if(spTab==='recv'){
@@ -1933,11 +1992,11 @@ function renderSplit(){
       });
       const row=(e,who)=>{
         const c=catOf(e),t=new Date(e.ts),sp=e.split,dt=sp.doneTs?new Date(sp.doneTs):null;
-        const sub=`${who?esc(sp.who)+'　':''}${t.getMonth()+1}月${t.getDate()}日　共 ${fmt(sp.done&&sp.orig!=null?sp.orig:e.amt,e.cur)}${sp.email?'　📨':''}${sp.done&&dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日收到':''}`;
+        const sub=`${who?esc(sp.who)+'　':''}${t.getMonth()+1}月${t.getDate()}日　共 ${fmt(sp.done&&sp.orig!=null?sp.orig:e.amt,e.cur)}${sp.email?'　'+tagHtml(spTag(e)):''}${sp.done&&dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日收到':''}`;
         return `<div class="srow${sp.done?' done':''}"><button class="row" data-id="${e.id}"><span class="ico">${c[1]}</span><span class="mid"><b>${esc(e.note||c[2])}</b><em>${sub}</em></span><span class="amt">${fmt(sp.amt,e.cur)}</span></button><button class="got" data-got="${e.id}">${sp.done?'撤销':'收到'}</button></div>`;
       };
       if(!pend.length)h+='<div class="sp-ok">都收齐了 ✓</div>';
-      h+=spGroups.map((g,i)=>`<div class="sp-who"><div><b>${esc(g.name)}</b><span>${g.list.length} 笔 · ${money(g.by)}</span></div><button data-g="${i}">全部收到</button></div>`+g.list.map(e=>row(e,false)).join('')).join('');
+      h+=spGroups.map((g,i)=>`<div class="sp-who"><div class="sp-id">${avatar(g.name)}<div><b>${esc(g.name)}</b><span>${g.list.length} 笔 · ${money(g.by)}</span></div></div><button data-g="${i}">全部收到</button></div>`+g.list.map(e=>row(e,false)).join('')).join('');
       if(done.length){
         h+=`<button class="sp-tog" id="spTog">${spShowDone?'收起':'展开'}已收款（${done.length}）${spShowDone?'▴':'▾'}</button>`;
         if(spShowDone)h+=[...done].sort((a,b)=>(b.split.doneTs||0)-(a.split.doneTs||0)).map(e=>row(e,true)).join('');
@@ -1956,11 +2015,11 @@ function renderSplit(){
       });
       const orow=(o,who)=>{
         const t=new Date(o.ts),dt=o.doneTs?new Date(o.doneTs):null;
-        const sub=`${who?esc(o.who)+'　':''}${t.getMonth()+1}月${t.getDate()}日${o.k==='s'?'　📨':''}${o.done&&dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日已还':''}`;
+        const sub=`${who?esc(o.who)+'　':''}${t.getMonth()+1}月${t.getDate()}日${o.k==='s'?'　'+(!o.done&&!o.seen?'<span class="sp-tag new">新</span>':'')+'<span class="sp-tag in">对方记的</span>':''}${o.done&&dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日已还':''}`;
         return `<div class="srow${o.done?' done':''}"><button class="row" data-o="${o.k}:${esc(o.id)}"><span class="ico">${o.k==='s'?'📨':'💸'}</span><span class="mid"><b>${esc(o.note||'欠款')}</b><em>${sub}</em></span><span class="amt">${fmt(o.amt,o.cur)}</span></button><button class="got" data-pay="${o.k}:${esc(o.id)}" data-dn="${o.done?1:0}">${o.done?'撤销':'还款'}</button></div>`;
       };
       if(!opend.length)h+='<div class="sp-ok">都还清了 ✓</div>';
-      h+=oGroups.map((g,i)=>`<div class="sp-who"><div><b>${esc(g.name)}</b><span>${g.list.length} 笔 · ${money(g.by)}</span></div><button data-og="${i}">全部还清</button></div>`+g.list.map(o=>orow(o,false)).join('')).join('');
+      h+=oGroups.map((g,i)=>`<div class="sp-who"><div class="sp-id">${avatar(g.name)}<div><b>${esc(g.name)}</b><span>${g.list.length} 笔 · ${money(g.by)}</span></div></div><button data-og="${i}">全部还清</button></div>`+g.list.map(o=>orow(o,false)).join('')).join('');
       if(odone.length){
         h+=`<button class="sp-tog" id="spTog">${spShowDone?'收起':'展开'}已还款（${odone.length}）${spShowDone?'▴':'▾'}</button>`;
         if(spShowDone)h+=[...odone].sort((a,b)=>b.doneTs-a.doneTs).map(o=>orow(o,true)).join('');
@@ -1986,10 +2045,27 @@ function renderSplit(){
     if(k==='m'){const d=debts.find(x=>x.id===id);if(d&&!d.done)openDebtEd(d)}
     else toast('这笔是对方记给你的，只能由对方修改');
   });
+  const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+  $$('#splitBody .sp-bar i').forEach(i=>{
+    const p=+i.dataset.p;spPrev.p[i.dataset.key]=p;
+    if(reduce)i.style.width=p+'%';
+    else requestAnimationFrame(()=>requestAnimationFrame(()=>{i.style.width=p+'%'}));
+  });
+  $$('#splitBody [data-roll]').forEach(el=>{
+    const key=el.dataset.roll;
+    if(el.dataset.val===undefined){delete spPrev.n[key];return}
+    const to=+el.dataset.val,c=el.dataset.cur,pv=spPrev.n[key],from=pv&&pv.c===c?pv.v:0;
+    spPrev.n[key]={c,v:to};
+    if(!reduce&&from!==to)rollNum(el,from,to,c,key);
+  });
+  if(spTab==='owe'&&Sync.authed()){   /* 对方的欠款我看到了 → 告诉对方（他那边显示「对方已看到」） */
+    const ids=owesList().filter(o=>!o.seen&&!spSeenSent.has(o.id)).map(o=>o.id);
+    if(ids.length){ids.forEach(i=>spSeenSent.add(i));Sync.markSeen(ids)}
+  }
   const ad=$('#spAddDebt');if(ad)ad.onclick=()=>openDebtEd(null);
   const tg=$('#spTog');if(tg)tg.onclick=()=>{spShowDone=!spShowDone;renderSplit()};
 }
-$('#openSplit').onclick=()=>{spShowDone=false;spTab='recv';renderSplit();openSheet('Split');if(Sync.on)Sync.run()};
+$('#openSplit').onclick=()=>{spShowDone=false;spTab='recv';spPrev={p:{},n:{}};renderSplit();openSheet('Split');if(Sync.on)Sync.run()};
 
 
 /* ---------- 周期账目 ---------- */
@@ -2567,7 +2643,7 @@ function openDetail(id){
   }
   if(e.split&&e.split.who){
     const sp=e.split,dt=sp.doneTs?new Date(sp.doneTs):null;
-    h+=`<div class="sp-card"><div class="sp-top"><b>🤝 ${esc(sp.who)}</b><span>${sp.done?'已收到'+(dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日':''):'待收'}</span></div><div class="sp-amt">${fmt(sp.amt,e.cur)}</div>${sp.email?`<div style="font-size:12.5px;color:var(--mute);margin:-4px 0 10px">📨 已同步给 ${esc(sp.email)}</div>`:''}${sp.done&&sp.orig!=null?`<div style="font-size:12.5px;color:var(--mute);margin:-4px 0 10px">总额 ${fmt(sp.orig,e.cur)}，扣除后记为 ${fmt(e.amt,e.cur)}</div>`:''}<button class="btn${sp.done?'':' fill'}" id="spToggle">${sp.done?'撤销收款':'标记已收到'}</button></div>`;
+    h+=`<div class="sp-card"><div class="sp-top"><b>🤝 ${esc(sp.who)}</b><span>${sp.done?'已收到'+(dt?'　'+(dt.getMonth()+1)+'月'+dt.getDate()+'日':''):'待收'}</span></div><div class="sp-amt">${fmt(sp.amt,e.cur)}</div>${sp.email?`<div style="font-size:12.5px;color:var(--mute);margin:-4px 0 10px">📨 已同步给 ${esc(sp.email)}　${tagHtml(spTag(e))}</div>`:''}${sp.done&&sp.orig!=null?`<div style="font-size:12.5px;color:var(--mute);margin:-4px 0 10px">总额 ${fmt(sp.orig,e.cur)}，扣除后记为 ${fmt(e.amt,e.cur)}</div>`:''}<button class="btn${sp.done?'':' fill'}" id="spToggle">${sp.done?'撤销收款':'标记已收到'}</button></div>`;
   }
   h+=`<div class="d-acts"><button class="btn danger" id="delBtn">删除</button><button class="btn" id="againBtn">再记一笔</button><button class="btn fill" id="editBtn">编辑</button></div>`;
   $('#detailBody').innerHTML=h;
@@ -3219,7 +3295,6 @@ const Sync=(()=>{
      本机登记表 ledger.spreg：{共享id:{eid:账目id, sig:上次推送的内容签名(null=还没推过), done:上次同步的结清状态}}
      云端表 splits 见 supabase-splits.sql；表还没建好时只影响分账同步，不影响普通记账同步。 */
   const uuid=()=>(window.crypto&&crypto.randomUUID)?crypto.randomUUID():newId()+newId()+newId();
-  const SPCOLS='id,creditor_id,creditor_email,debtor_email,who,amt,cur,note,entry_ts,status,settled_at,updated_at';
   const spSig=e=>{const s=e.split;return [s.email,s.who,s.amt,e.cur,e.note||'',e.ts].join('|')};
   async function spFlush(){
     const reg=store.get('ledger.spreg')||{},live={},dirty=[];
@@ -3247,19 +3322,20 @@ const Sync=(()=>{
   }
   async function spPull(){
     const reg=store.get('ledger.spreg')||{};
-    const rows=await rest('GET','splits?select='+SPCOLS+'&or=(creditor_id.eq.'+auth.uid+',status.neq.cancelled)&order=updated_at.desc&limit=2000');
+    const rows=await rest('GET','splits?select=*&or=(creditor_id.eq.'+auth.uid+',status.neq.cancelled)&order=updated_at.desc&limit=2000');
     let changed=false,regCh=false;
     /* 1) 别人记给我的 → 我的「我欠别人」 */
     const prev=store.get('ledger.owes')||[],pm={};prev.forEach(o=>{pm[o.id]=o});
-    const owes=[],mine={};
+    const owes=[],mine={},stat={};
     for(const r of rows){
-      if(r.creditor_id===auth.uid){mine[r.id]=r;continue}
+      if(r.creditor_id===auth.uid){mine[r.id]=r;if(r.status!=='cancelled')stat[r.id]={seen:!!r.seen_at};continue}
       if(r.status==='cancelled')continue;
       const p=pm[r.id]||{};
-      owes.push({id:r.id,ce:r.creditor_email,amt:+r.amt,cur:r.cur,note:r.note||'',ts:+r.entry_ts||Date.parse(r.updated_at),st:r.status,at:r.settled_at?Date.parse(r.settled_at):0,...(p.repayId?{repayId:p.repayId}:{})});
+      owes.push({id:r.id,ce:r.creditor_email,amt:+r.amt,cur:r.cur,note:r.note||'',ts:+r.entry_ts||Date.parse(r.updated_at),st:r.status,at:r.settled_at?Date.parse(r.settled_at):0,seen:!!r.seen_at,...(p.repayId?{repayId:p.repayId}:{})});
     }
     owes.sort((a,b)=>b.ts-a.ts);
     if(JSON.stringify(owes)!==JSON.stringify(prev)){store.set('ledger.owes',owes);changed=true}
+    if(JSON.stringify(stat)!==JSON.stringify(store.get('ledger.spstat')||{})){store.set('ledger.spstat',stat);changed=true}
     /* 2) 我记给别人的 → 对方点了已还款，我这边自动「收到」 */
     const applied=[];
     entries.forEach(e=>{
@@ -3286,6 +3362,13 @@ const Sync=(()=>{
       changed=true;
     }
     return changed;
+  }
+  async function markSeen(ids){
+    const okIds=[];
+    for(const id of ids){
+      try{await rest('PATCH','splits?id=eq.'+encodeURIComponent(id),{seen_at:new Date().toISOString()},'return=minimal');okIds.push(id)}catch(e){}
+    }
+    if(okIds.length)store.set('ledger.owes',(store.get('ledger.owes')||[]).map(o=>okIds.includes(o.id)?{...o,seen:true}:o));
   }
   async function owePatch(id,done){
     const out=await rest('PATCH','splits?id=eq.'+encodeURIComponent(id),{status:done?'settled':'pending',settled_at:done?new Date().toISOString():null},'return=representation');
@@ -3355,7 +3438,7 @@ const Sync=(()=>{
   window.addEventListener('online',()=>sched(800));
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)sched(800)});
   setInterval(()=>{if(!document.hidden)sched(100)},180000);
-  return {on,run,html,bind,applying:false,authed:()=>!!auth,email:()=>(auth&&auth.email)||'',owePatch,start:()=>{if(on&&auth)sched(1200)}};
+  return {on,run,html,bind,applying:false,authed:()=>!!auth,email:()=>(auth&&auth.email)||'',owePatch,markSeen,start:()=>{if(on&&auth)sched(1200)}};
 })();
 
 (async function init(){
